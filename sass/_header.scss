@@ -1,0 +1,33 @@
+/*--------------------------------------------------------------
+# Header
+--------------------------------------------------------------*/
+#masthead {
+	@extend .padding;
+
+	h1 {
+		@extend .visuallyhidden;
+	}
+	
+	#site-branding {
+  	display: block;
+		padding-top: 1.5em;
+		svg {
+			color: $red;
+			display: block;
+			height: 50px;
+			transition: color $base-duration;
+			width: 140px;
+
+			&:hover,
+			&:active {
+				color: white;
+			}
+		}
+	}
+	
+	#site-navigation {
+		position: absolute;
+		top: 0;
+		right: 0;
+	}
+}
