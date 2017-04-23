@@ -1,7 +1,7 @@
 /*--------------------------------------------------------------
 # Homepage
 --------------------------------------------------------------*/
-.page_home {
+body.page_home {
 	background-color: $red;
 	background-image: url('../img/bg_main.png'),url('../img/bg_pattern_pink.png');
 	background-position: center top, center top;
@@ -14,37 +14,7 @@
   }
 
   > main {
-  	padding-top: 2.5em;
-
-  	@include grid-media($medium) {
-  		padding-top: 10em;
-  	}
-
-  	@include grid-media($large) {
-  		padding-top: 12.5em;
-  	}
-
   	> article {
-  		text-align: center;
-      @extend .padding;
-  
-  		@include grid-media($medium) {
-  			text-align: left;
-  
-  			h2 {
-  				max-width: 16em;
-  			}
-  	
-  			p {
-  				max-width: 51em;
-  			}
-  			
-  			strong {
-  				font-size: 1.5em;
-  			}
-  			
-  		}
-  
   		.btn {
   			margin: 3.75em auto;
   			@include grid-media($medium) {
@@ -59,7 +29,6 @@
   		}
   	}
   }
-
 
   /*--------------------------------------------------------------
   # Lineup
