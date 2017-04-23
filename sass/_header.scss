@@ -20,7 +20,14 @@
 
 			&:hover,
 			&:active {
-				color: white;
+				color: $blue;
+			}
+			
+			.page_home & {
+  			&:hover,
+  			&:active {
+  				color: white;
+  			}
 			}
 		}
 	}

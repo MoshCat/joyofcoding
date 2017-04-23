@@ -8,11 +8,17 @@ body.page_schedule {
 	}
 	
 	.schedule-grid {
-  	margin-bottom: 7em;
+  	margin-bottom: 3em;
+    @include grid-media($medium) {
+    	margin-bottom: 7em;
+    }
   	
   	.btn {
     	display: table;
-    	margin: 7em auto 12.5em;
+    	margin: 0 auto;
+      @include grid-media($medium) {
+      	margin: 0 auto 12.5em;
+      }
   	}
 
     ul.sg_timeslot {
