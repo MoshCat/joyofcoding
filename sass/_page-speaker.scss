@@ -9,12 +9,10 @@ body.page_speaker {
    
   > main {
   @extend .wrapper;
-  @extend .padding;
   margin-top: 1em;
 
     > article {
       @include grid-container();
-      @include grid-collapse();
 
       > header {
         @include grid-column(12);
@@ -38,7 +36,7 @@ body.page_speaker {
             @include grid-column(4.75);
           }
         }
-
+        
       	.spkr_meta {
           border-top: 1px solid $blue;
       		font-size: .75em;

@@ -80,6 +80,16 @@ body.page_schedule {
           }
         }
   
+        .sg_event_link {
+          display: block;
+          height: 100%;
+          
+          &:hover,
+          &:active {
+            text-decoration: none;
+          }
+        }
+
         .sg_event_title {
         	font-style: italic;
         	font-family: "Times New Roman", "Times", "Georgia", "Cambria", serif;
@@ -100,8 +110,8 @@ body.page_schedule {
 
         .sg_event_meta {
           font-size: .6875em;
-          margin-top: 2em;
-          margin-bottom: 1em;
+          padding-top: 2em;
+          padding-bottom: 1em;
           text-transform: uppercase;
   
           .sg_event_type,
@@ -111,7 +121,7 @@ body.page_schedule {
           }
           
           &.meta_2 {
-            padding-bottom: .5em;
+            padding-bottom: 1.5em;
             position: absolute;
             right: 0;
             bottom: 0;

@@ -1,0 +1,103 @@
+/*--------------------------------------------------------------
+# Homepage
+--------------------------------------------------------------*/
+.page_about {
+/*
+	background-image: url('../img/bg_main.png'),url('../img/bg_pattern_pink.png');
+	background-position: center top, center top;
+	background-size: 100%, auto;
+	background-repeat: no-repeat, repeat;
+*/
+
+	background-image: url('../img/bg_pattern_pink.png');
+	background-position: center top;
+	background-size: auto;
+	background-repeat: repeat;
+	
+	section.staff {
+//   	@extend .padding;
+//   	@extend .wrapper;
+	}
+	
+	.about_grid {
+  	@include grid-container();
+//   	@include grid-collapse();
+  	margin-bottom: 3em;
+    @include grid-media($medium) {
+    	margin-bottom: 7em;
+    }
+  	
+  	.ag_item {
+    	@include grid-column(3);
+    	border-top: 1px solid $blue;
+     	position: relative;
+    	
+    	.ag_item_title {
+      	font-size: 2em;
+      	position: absolute;
+      	top: 7.5rem;
+    	}
+    	
+    	img {
+      	display: block;
+      	margin-bottom: 3em;
+      	margin-left: auto;
+      	width: calc(100% - 3em);
+    	}
+    	
+    	.ag_item_content {
+      	font-size: .875em
+    	}
+    	
+    	.ag_item_social {
+   	    display: block;
+      	font-size: .875em;
+      	font-family: "Source Code Pro";
+      	font-weight: bold;
+      	text-decoration: underline;
+      	text-align: right;
+      	width: 100%;
+      	
+      	&:hover,
+      	&:active {
+        	text-decoration: none;
+      	}
+    	}
+  	}
+	}
+
+  .ag_box {
+  	@include grid-column(3);
+  	@include grid-push(3);
+  	position: relative;
+  	border: 1px solid #ccc;
+
+    .ag_box_content {
+      background: white;
+      float: right;
+      padding: 40px;
+//       width: 275px;
+			font-family: "Source Code Pro";
+			font-size: .875em;
+
+			p {
+				line-height: 2.5em;
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+      
+      .ag_box_title {
+      	font-size: 2em;
+      }
+    }
+
+    .ag_box_image {
+      position: absolute;
+      bottom: -2em;
+      max-width: 180%;
+      right: 2em;
+      z-index: -1;
+    }
+  }	
+}

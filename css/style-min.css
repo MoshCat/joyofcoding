@@ -615,13 +615,13 @@ body {
   margin: 0 auto;
 }
 
-.padding, body.page_home > main > article, body.page_schedule > main > article, #masthead, .page_home #lineup article, .page_home #sponsors > section, body.page_speaker > main, body.page_schedule article {
+.padding, body.page_home > main > article, body.page_schedule > main > article, body.page_about > main > article, #masthead, .page_home #lineup article, .page_home #sponsors > section, body.page_schedule article {
   padding-left: 2.5em;
   padding-right: 2.5em;
 }
 
 @media only screen and (min-width: 1024px) {
-  .padding, body.page_home > main > article, body.page_schedule > main > article, #masthead, .page_home #lineup article, .page_home #sponsors > section, body.page_speaker > main, body.page_schedule article {
+  .padding, body.page_home > main > article, body.page_schedule > main > article, body.page_about > main > article, #masthead, .page_home #lineup article, .page_home #sponsors > section, body.page_schedule article {
     padding-left: 3.75em;
     padding-right: 3.75em;
   }
@@ -644,38 +644,39 @@ body.page_speaker #masthead, body.page_schedule #masthead {
 }
 
 @media only screen and (min-width: 768px) {
-  body.page_home > main, body.page_schedule > main {
+  body.page_home > main, body.page_schedule > main, body.page_about > main {
     padding-top: 3em;
   }
 }
 
 @media only screen and (min-width: 1024px) {
-  body.page_home > main, body.page_schedule > main {
+  body.page_home > main, body.page_schedule > main, body.page_about > main {
     padding-top: 5em;
   }
 }
 
 @media only screen and (min-width: 1440px) {
-  body.page_home > main, body.page_schedule > main {
+  body.page_home > main, body.page_schedule > main, body.page_about > main {
     padding-top: 7em;
   }
 }
 
-body.page_home > main > article, body.page_schedule > main > article {
+body.page_home > main > article, body.page_schedule > main > article, body.page_about > main > article {
   text-align: center;
 }
 
 @media only screen and (min-width: 768px) {
-  body.page_home > main > article, body.page_schedule > main > article {
+  body.page_home > main > article, body.page_schedule > main > article, body.page_about > main > article {
     text-align: left;
   }
-  body.page_home > main > article h2, body.page_schedule > main > article h2 {
+  body.page_home > main > article h2, body.page_schedule > main > article h2, body.page_about > main > article h2 {
     max-width: 16em;
   }
-  body.page_home > main > article .entry-content, body.page_schedule > main > article .entry-content {
+  body.page_home > main > article .entry-content, body.page_schedule > main > article .entry-content, body.page_about > main > article .entry-content {
     max-width: 51em;
+    padding-bottom: 3em;
   }
-  body.page_home > main > article strong, body.page_schedule > main > article strong {
+  body.page_home > main > article strong, body.page_schedule > main > article strong, body.page_about > main > article strong {
     font-size: 1.5em;
   }
 }
@@ -1179,12 +1180,6 @@ body.page_speaker > main {
   margin-top: 1em;
 }
 
-body.page_speaker > main > article {
-  margin-left: -100px;
-  margin-right: -100px;
-  width: calc(100% + 200px);
-}
-
 body.page_speaker > main > article::after {
   clear: both;
   content: "";
@@ -1427,6 +1422,15 @@ body.page_schedule .schedule-grid ul.sg_timeslot li.sg_event.sg_main:after {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fff37e', endColorstr='#ff5864',GradientType=1 );
 }
 
+body.page_schedule .schedule-grid ul.sg_timeslot li .sg_event_link {
+  display: block;
+  height: 100%;
+}
+
+body.page_schedule .schedule-grid ul.sg_timeslot li .sg_event_link:hover, body.page_schedule .schedule-grid ul.sg_timeslot li .sg_event_link:active {
+  text-decoration: none;
+}
+
 body.page_schedule .schedule-grid ul.sg_timeslot li .sg_event_title {
   font-style: italic;
   font-family: "Times New Roman", "Times", "Georgia", "Cambria", serif;
@@ -1451,8 +1455,8 @@ body.page_schedule .schedule-grid ul.sg_timeslot li .sg_event_title {
 
 body.page_schedule .schedule-grid ul.sg_timeslot li .sg_event_meta {
   font-size: .6875em;
-  margin-top: 2em;
-  margin-bottom: 1em;
+  padding-top: 2em;
+  padding-bottom: 1em;
   text-transform: uppercase;
 }
 
@@ -1463,7 +1467,7 @@ body.page_schedule .schedule-grid ul.sg_timeslot li .sg_event_meta .sg_event_spe
 }
 
 body.page_schedule .schedule-grid ul.sg_timeslot li .sg_event_meta.meta_2 {
-  padding-bottom: .5em;
+  padding-bottom: 1.5em;
   position: absolute;
   right: 0;
   bottom: 0;
@@ -1477,6 +1481,114 @@ body.page_schedule .schedule-grid ul.sg_timeslot li.sg_event_empty {
   body.page_schedule .schedule-grid ul.sg_timeslot li.sg_event_empty {
     margin-right: 1.5em;
   }
+}
+
+/*--------------------------------------------------------------
+# Homepage
+--------------------------------------------------------------*/
+.page_about {
+  /*
+	background-image: url('../img/bg_main.png'),url('../img/bg_pattern_pink.png');
+	background-position: center top, center top;
+	background-size: 100%, auto;
+	background-repeat: no-repeat, repeat;
+*/
+  background-image: url("../img/bg_pattern_pink.png");
+  background-position: center top;
+  background-size: auto;
+  background-repeat: repeat;
+}
+
+.page_about .about_grid {
+  margin-bottom: 3em;
+}
+
+.page_about .about_grid::after {
+  clear: both;
+  content: "";
+  display: block;
+}
+
+@media only screen and (min-width: 768px) {
+  .page_about .about_grid {
+    margin-bottom: 7em;
+  }
+}
+
+.page_about .about_grid .ag_item {
+  width: calc(25% - 125px);
+  float: left;
+  margin-left: 100px;
+  border-top: 1px solid #0024b3;
+  position: relative;
+}
+
+.page_about .about_grid .ag_item .ag_item_title {
+  font-size: 2em;
+  position: absolute;
+  top: 7.5rem;
+}
+
+.page_about .about_grid .ag_item img {
+  display: block;
+  margin-bottom: 3em;
+  margin-left: auto;
+  width: calc(100% - 3em);
+}
+
+.page_about .about_grid .ag_item .ag_item_content {
+  font-size: .875em;
+}
+
+.page_about .about_grid .ag_item .ag_item_social {
+  display: block;
+  font-size: .875em;
+  font-family: "Source Code Pro";
+  font-weight: bold;
+  text-decoration: underline;
+  text-align: right;
+  width: 100%;
+}
+
+.page_about .about_grid .ag_item .ag_item_social:hover, .page_about .about_grid .ag_item .ag_item_social:active {
+  text-decoration: none;
+}
+
+.page_about .ag_box {
+  width: calc(25% - 125px);
+  float: left;
+  margin-left: 100px;
+  margin-left: calc(25% - 125px + 200px);
+  position: relative;
+  border: 1px solid #ccc;
+}
+
+.page_about .ag_box .ag_box_content {
+  background: white;
+  float: right;
+  padding: 40px;
+  font-family: "Source Code Pro";
+  font-size: .875em;
+}
+
+.page_about .ag_box .ag_box_content p {
+  line-height: 2.5em;
+}
+
+.page_about .ag_box .ag_box_content p:last-child {
+  margin-bottom: 0;
+}
+
+.page_about .ag_box .ag_box_content .ag_box_title {
+  font-size: 2em;
+}
+
+.page_about .ag_box .ag_box_image {
+  position: absolute;
+  bottom: -2em;
+  max-width: 180%;
+  right: 2em;
+  z-index: -1;
 }
 
 /*--------------------------------------------------------------

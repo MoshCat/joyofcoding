@@ -57,7 +57,8 @@ body {
   }
 
   &.page_home,
-  &.page_schedule {
+  &.page_schedule,
+  &.page_about {
 
     > main {
   
@@ -86,6 +87,7 @@ body {
     	
     			.entry-content {
     				max-width: 51em;
+        		padding-bottom: 3em;
     			}
   
     			strong {
