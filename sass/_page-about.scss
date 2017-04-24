@@ -14,14 +14,13 @@
 	background-size: auto;
 	background-repeat: repeat;
 	
-	section.staff {
-//   	@extend .padding;
-//   	@extend .wrapper;
+	#organisation {
+    @include grid-column(12);
 	}
 	
 	.about_grid {
   	@include grid-container();
-//   	@include grid-collapse();
+  	@include grid-collapse();
   	margin-bottom: 3em;
     @include grid-media($medium) {
     	margin-bottom: 7em;

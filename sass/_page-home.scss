@@ -12,41 +12,30 @@
   a {
     color: white;
   }
-
-  > main {
-  	> article {
-  		.btn {
-  			margin: 3.75em auto;
-  			@include grid-media($medium) {
-  				margin: 4em 0;
-  			}
-  			@include grid-media($large) {
-  				margin: 5em 0;
-  			}
-  			@include grid-media($xlarge) {
-  				margin: 14em 0 0 12.5em;
-  			}
-  		}
-  	}
+  
+  .entry-content {
+		strong {
+			font-size: 1.5em;
+		}
   }
 
   /*--------------------------------------------------------------
   # Lineup
   --------------------------------------------------------------*/
   #lineup {
-  	
-  	article {
-  		@extend .padding;
-  		@extend .wrapper;
+    @include grid-column(12);
+
+		.lineup_container {
   		display: flex;
   		flex-flow: row wrap;
   		justify-content: center;
   		@include grid-media($xlarge) {
   			justify-content: space-between;
   		}
-  	}
-  
-  	section {
+  		
+		}
+  	
+  	article {
   		position: relative;
   		margin-left: auto;
   		margin-right: auto;
@@ -54,8 +43,6 @@
   	 	margin-top: 2.5em;	
   		@include grid-media($medium) {
   		 	margin-top: 0;	
-  			margin-left: 0;
-  			margin-right: 0;
   		 	width: 75%;
   		}
   		
@@ -68,14 +55,38 @@
   				margin-top: 7em; 
   			}
   		}
+  	}
+  }
+
+  /*--------------------------------------------------------------
+  # Lineup Adjustemnts
+  --------------------------------------------------------------*/
+  #lineup {
+
+  	article {
   
   		// Speakers
-  		&:nth-child(1) { order: 1; }
-  		&:nth-child(2) { order: 2; }
-  		&:nth-child(3) { order: 5; @extend .spkr_alt; }
-  		&:nth-child(4) { order: 6; @extend .spkr_alt; }
-  		&:nth-child(5) { order: 9; }
-  		&:nth-child(6) { order: 10; }
+  		&:nth-child(1) { order: 1; }                      /* Carin */ 
+  		&:nth-child(2) { order: 2; }                      /* Ted */
+  		&:nth-child(3) { order: 5; @extend .spkr_alt; }   /* Neil */
+  		&:nth-child(4) { order: 6; @extend .spkr_alt; }   /* Jessica */
+  		&:nth-child(5) { order: 9; }                      /* Llewellyn */
+  		&:nth-child(6) { order: 10; }                     /* Koshin Mariano*/
+
+  		// Shift first
+  		&:nth-child(1) {
+  			@include grid-media($xlarge) {
+  				margin-left: 51.845%;
+  			}
+  		}
+
+      // Speaker numbers
+  		&:nth-child(1) { margin-top: -20em; .spkr h3:before { content: url('../img/nr_carin_meier_zeven.png'); } }
+  		&:nth-child(2) { margin-top: -25em; .spkr h3:before { content: url('../img/nr_ted_neward_zes.png'); } }
+  		&:nth-child(3) { margin-top:   0em; .spkr h3:before { content: url('../img/nr_neil_ford_een.png'); } }
+  		&:nth-child(4) { margin-top:   0em; .spkr h3:before { content: url('../img/nr_jessica_kerr_drie.png'); } }
+			&:nth-child(5) { margin-top:   0em; .spkr h3:before { content: url('../img/nr_llewellyn_falco_nul.png'); } }
+  		&:nth-child(6) { margin-top:   0em; .spkr h3:before { content: url('../img/nr_koshin_mariano_nul.png'); } }
   		
   		// Callouts
   		&:nth-child(7) { order: 3; }
@@ -84,49 +95,27 @@
   		&:nth-child(10) { order: 8; }
   		&:nth-child(11) { order: 11; }
   
-  	}
-  }
-  
-  
-  /*--------------------------------------------------------------
-  # Lineup Adjustemnts
-  --------------------------------------------------------------*/
-  #lineup {
-
-  	section {
-  
-  		.spkr h3 {
-  			position: relative;
+  		.spkr {
+    		
+    		a {
+      		display: block;
+    		}
+    		
+    		h3 {
+  			  position: relative;
   	
-  			&:before {
-  				position: absolute;
-  				z-index: -2;
-  				top: -3.75rem;
-  				right: -2.5rem;
-  				@include grid-media($medium) {
-  					right: -2.5rem;
-  					left: auto;
-  				}
-  			}
-  		}
-  
-  		&:nth-child(1) {
-  			@include grid-media($xlarge) {
-  				margin-left: 53.845%;
-  				margin-top: -20em;
-  			}
-  
-  			.spkr h3:before {
-  				content: url('../img/nr_llewellyn_falco_nul.png');
-  			}
-  		}
-  		
-  		
-  		&:nth-child(2) { .spkr h3:before { content: url('../img/nr_jessica_kerr_drie.png'); } }
-  		&:nth-child(3) { .spkr h3:before { content: url('../img/nr_ted_neward_zes.png'); } }
-  		&:nth-child(4) { .spkr h3:before { content: url('../img/nr_koshin_mariano_nul.png'); } }
-  		&:nth-child(5) { .spkr h3:before { content: url('../img/nr_carin_meier_zeven.png'); } }
-  		&:nth-child(6) { .spkr h3:before { content: url('../img/nr_neil_ford_een.png'); } }
+    			&:before {
+    				position: absolute;
+    				z-index: -2;
+    				top: -3.75rem;
+    				right: -2.5rem;
+    				@include grid-media($medium) {
+    					right: -2.5rem;
+    					left: auto;
+    				}
+    			}
+    		}
+      }
   	}
   }
 
@@ -136,17 +125,23 @@
   --------------------------------------------------------------*/
   #sponsors {
     background-color: white;
+    color: $blue;
   	text-align: center;
-  
-     > section {
-    	@extend .padding;
-    	@extend .wrapper;
+    @include grid-column(12);
+    @include clearfix();
+    > section {
     	padding-top: 2em;
     	padding-bottom: 2em;
+    	
     
     	@include grid-media($large) {
     		padding-top: 5em;
         padding-bottom: 7em;
+    	}
+    	
+    	h2 {
+      	font-size: 1.5em;
+      	margin-bottom: 3em;
     	}
     
     	ul {
@@ -163,7 +158,7 @@
     		li {
     			flex-basis: 100%;
           padding: .5em 3em;
-    			margin-bottom: 2em;
+    			margin-bottom: 3em;
     			@include grid-media($small) {
     				flex-basis: 50%;
     			}
@@ -195,6 +190,7 @@
   # Video
   --------------------------------------------------------------*/
   #video {
+    @include grid-column(12,$nogutter);
   	@include aspect-ratio(16,9);
     position: relative;
   

@@ -23,6 +23,9 @@
 			text-decoration: none;
 			&:hover,
 			&:active {
+  			.page_home & {
+  				color: white;
+  			}
 				color: $blue;
         text-decoration: none;
 			}
@@ -36,6 +39,7 @@
 				&:hover,
 				&:active {
 					background: white;
+  				color: $blue;
 				}
 			}
 		}

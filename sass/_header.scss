@@ -2,7 +2,6 @@
 # Header
 --------------------------------------------------------------*/
 #masthead {
-	@extend .padding;
 
 	h1 {
 		@extend .visuallyhidden;
@@ -11,6 +10,7 @@
 	#site-branding {
   	display: block;
 		padding-top: 1.5em;
+		padding-left: 3.5em;
 		svg {
 			color: $red;
 			display: block;

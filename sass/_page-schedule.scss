@@ -2,24 +2,9 @@
 # Schedule
 --------------------------------------------------------------*/
 body.page_schedule {
-
-	article {
-		@extend .padding;
-	}
 	
 	.schedule-grid {
-  	margin-bottom: 3em;
-    @include grid-media($medium) {
-    	margin-bottom: 7em;
-    }
-  	
-  	.btn {
-    	display: table;
-    	margin: 0 auto;
-      @include grid-media($medium) {
-      	margin: 0 auto 12.5em;
-      }
-  	}
+    @include grid-column(12);
 
     ul.sg_timeslot {
       @include clearfix();
@@ -32,6 +17,13 @@ body.page_schedule {
       @include grid-media($medium) {
         justify-content: space-between;
         overflow-x: inherit;   
+      }
+      
+      &:last-of-type {
+      	margin-bottom: 3em;
+        @include grid-media($medium) {
+        	margin-bottom: 7em;
+        }
       }
   
       li {

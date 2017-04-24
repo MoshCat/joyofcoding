@@ -4,7 +4,7 @@
 .callout {
   color: $blue;
 	position: relative;
-	margin-bottom: 12em;
+	margin-bottom: 16em;
 
   a {
     color: $blue;
@@ -23,7 +23,7 @@
 	img {
 		position: absolute;
 		bottom: -2em;
-		right: -2.5em;
+		right: 0;
 		z-index: -1;
 
 		@include grid-media($medium) {
@@ -75,7 +75,7 @@
 
 .ca_alt {
 	img {
-		left: -2.5em;
+		left: 0em;
 	}
 
 	.callout {

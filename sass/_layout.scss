@@ -11,12 +11,6 @@ html {
   box-sizing: inherit;
 }
 
-html,
-body {
-// 	overflow-x: hidden;
-// 	overflow-y: auto;
-}
-
 body {
 	margin: 0;
 	padding: 0;
@@ -27,15 +21,6 @@ body {
 	margin: 0 auto;
 }
 
-.padding {
-	padding-left: 2.5em;
-	padding-right: 2.5em;
-	@include grid-media($large) {
-		padding-left: 3.75em;
-		padding-right: 3.75em;
-	}
-}
-
 body {
 	background-image: url('../img/bg_pattern_pink.png');
 	background-position: center top;
@@ -43,58 +28,48 @@ body {
 	
   #masthead {
   	height: 10em;
+    background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
+    background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%);
+    background: linear-gradient(to bottom, rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=0 );
+    
   }
 
-  &.page_speaker,
-  &.page_schedule {
-
-    #masthead {
-      background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
-      background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%);
-      background: linear-gradient(to bottom, rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%);
-      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=0 );
-    }
+  &.page_home #masthead {
+    background: none;
+    filter: none;
   }
 
-  &.page_home,
-  &.page_schedule,
-  &.page_about {
+  > main {
+    @include grid-container();
+  	@include grid-media($medium) {
+  		padding-top: 3em;
+  	}
 
-    > main {
-  
-    	@include grid-media($medium) {
-    		padding-top: 3em;
-    	}
-  
-    	@include grid-media($large) {
-    		padding-top: 5em;
-    	}
+  	@include grid-media($large) {
+  		padding-top: 5em;
+  	}
 
-    	@include grid-media($xlarge) {
-    		padding-top: 7em;
-    	}
+  	@include grid-media($xlarge) {
+  		padding-top: 7em;
+  	}
+
+    > article {
+      @include grid-column(12);
+  		text-align: center;
   
-    	> article {
-        @extend .padding;
-    		text-align: center;
-    
-    		@include grid-media($medium) {
-    			text-align: left;
-    
-    			h2 {
-    				max-width: 16em;
-    			}
-    	
-    			.entry-content {
-    				max-width: 51em;
-        		padding-bottom: 3em;
-    			}
+  		@include grid-media($medium) {
+  			text-align: left;
   
-    			strong {
-    				font-size: 1.5em;
-    			}
-    		}
-     	}
+  			h2 {
+  				max-width: 16em;
+  			}
+  	
+  			.entry-content {
+  				max-width: 51em;
+      		padding-bottom: 3em;
+  			}
+  		}
     }
   }
 }

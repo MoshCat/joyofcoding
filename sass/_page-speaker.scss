@@ -8,35 +8,35 @@ body.page_speaker {
 
    
   > main {
-  @extend .wrapper;
+//   @extend .wrapper;
   margin-top: 1em;
 
     > article {
-      @include grid-container();
+//       @include grid-container();
 
       > header {
-        @include grid-column(12);
+//         @include grid-column(12);
         margin-bottom: 3em;
         
         .container {
           @include grid-container();
           @include grid-collapse();
-        }
 
-        .left {
-          @include grid-column(12);
-          @include grid-media($medium) {
-            @include grid-column(6);
+          .left {
+            @include grid-column(12);
+            @include grid-media($medium) {
+              @include grid-column(6);
+            }
+          }
+  
+          .right {
+            @include grid-column(12);
+            @include grid-media($medium) {
+              @include grid-column(4.75);
+            }
           }
         }
 
-        .right {
-          @include grid-column(12);
-          @include grid-media($medium) {
-            @include grid-column(4.75);
-          }
-        }
-        
       	.spkr_meta {
           border-top: 1px solid $blue;
       		font-size: .75em;
@@ -48,7 +48,7 @@ body.page_speaker {
       		width: 300px;
       	}
 
-      	h2.spkr_title {
+      	.spkr_title {
         	font-size: 7.5em;
         	text-align: right;
         	line-height: 1em;
