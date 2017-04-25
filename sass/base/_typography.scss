@@ -134,6 +134,10 @@ hr {
     text-shadow: none;
 }
 
+:focus {
+	outline: rgba( $red, .5 ) dotted 1px;
+}
+
 .visuallyhidden {
     border: 0;
     clip: rect(0 0 0 0);

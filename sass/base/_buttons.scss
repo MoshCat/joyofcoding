@@ -50,10 +50,10 @@ a.btn {
 		margin: 4em auto;
 	}
 	@include grid-media($large) {
-		margin: 5em auto;
+		margin: 7.5em auto;
 	}
 	@include grid-media($xxlarge) {
-		margin: 12em auto;
+		margin: 10em auto;
 	}
 
 	&:hover,

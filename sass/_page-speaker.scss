@@ -8,14 +8,11 @@ body.page_speaker {
 
    
   > main {
-//   @extend .wrapper;
-  margin-top: 1em;
+    margin-top: 1em;
 
     > article {
-//       @include grid-container();
 
       > header {
-//         @include grid-column(12);
         margin-bottom: 3em;
         
         .container {
@@ -54,6 +51,7 @@ body.page_speaker {
         	line-height: 1em;
         	margin-top: 8rem;
         	margin-bottom: 6rem;
+        	z-index: 1;
           @include grid-media($medium) {
           	margin-right: -5rem;
           }
