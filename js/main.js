@@ -2,11 +2,13 @@
 // @codekit-prepend 'skrollr.min.js'
 
 
+/*
 if (window.matchMedia('(min-width: 1024px)').matches) {
   skrollr.init({
   	forceHeight: false
   });
 }
+*/
 
 // poster frame click event
 $(document).on('click','.js-videoPoster',function(ev) {

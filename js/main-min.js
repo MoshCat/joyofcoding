@@ -12,11 +12,13 @@ void 0!==c?e&&"set"in e&&void 0!==(d=e.set(a,c,b))?d:a[b]=c:e&&"get"in e&&null!=
 // @codekit-prepend 'skrollr.min.js'
 
 
+/*
 if (window.matchMedia('(min-width: 1024px)').matches) {
   skrollr.init({
   	forceHeight: false
   });
 }
+*/
 
 // poster frame click event
 $(document).on('click','.js-videoPoster',function(ev) {

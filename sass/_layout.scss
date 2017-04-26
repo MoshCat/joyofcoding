@@ -38,46 +38,50 @@ body {
 	background-repeat: repeat;
 	
 
+/*
   &.page_home #masthead {
     background: none;
     filter: none;
   }
+*/
 
   > main {
     @include grid-container();
-//     @include grid-collapse();
-//     @extend .padding;
+		padding-top: 8em;
   	@include grid-media($medium) {
-  		padding-top: 3em;
+  		padding-top: 12.5em;
   	}
 
   	@include grid-media($large) {
-  		padding-top: 5em;
+  		padding-top: 15em;
   	}
 
   	@include grid-media($xlarge) {
-  		padding-top: 7em;
+  		padding-top: 20em;
   	}
 
     > article {
+  		text-align: center;
       @include grid-column(12);
     	@include grid-media($medium) {
         @include grid-column(12);
     	}
-  		text-align: center;
-  
-  		@include grid-media($medium) {
-  			text-align: left;
-  
-  			h2 {
-  				max-width: 16em;
-  			}
-  	
-  			.entry-content {
-  				max-width: 51em;
-      		padding-bottom: 3em;
-  			}
-  		}
+
+ 			.entry-content {
+   			margin-bottom: 3em;
+    		@include grid-media($medium) {
+     			text-align: left;
+    		}
+
+    		@include grid-media($large) {
+    			max-width: 80%;
+          margin-bottom: 5em;
+    		}
+
+    		@include grid-media($xlarge) {
+  				max-width: 66%;
+    		}
+   		}
     }
   }
 }

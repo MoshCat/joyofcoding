@@ -58,23 +58,11 @@ aside#footer {
 aside#footer {
   background-color: white;
 	text-align: center;
+
 	@include grid-media($large) {
 		text-align: left;
 	}
-	
-	a {
-  	color: $blue;
-  	text-decoration: underline;
-  	&:hover, 
-  	&:active {
-    	text-decoration: none;
-  	}
-	}
   
-  #contact {
-    color: $blue;
-  }
-
 	.wrap {
   	color: white;
 		background-color: $red;
@@ -154,11 +142,6 @@ footer#socket {
 	
 	a {
     color: white;
-  	text-decoration: underline;
-  	&:hover, 
-  	&:active {
-    	text-decoration: none;
-  	}
 	}
   
 	> span {

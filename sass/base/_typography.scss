@@ -105,13 +105,13 @@ blockquote {
 
 a {
 	color: $action-color;
-	text-decoration: none;
+	text-decoration: underline;
 	transition: color $base-duration $base-timing;
 	
 	&:active,
 	&:focus,
 	&:hover {
-		text-decoration: underline;
+		text-decoration: none;
 	}
 }
 

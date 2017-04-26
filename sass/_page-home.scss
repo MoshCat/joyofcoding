@@ -12,6 +12,13 @@
   	background-image: url('../img/bg_main.png'),url('../img/bg_pattern_pink.png');
   }
 
+  #masthead {
+    background: -moz-linear-gradient(top,  rgba(0,36,179,1) 0%, rgba(0,36,179,0.5) 33%, rgba(0,36,179,0) 100%);
+    background: -webkit-linear-gradient(top,  rgba(0,36,179,1) 0%,rgba(0,36,179,0.5) 33%,rgba(0,36,179,0) 100%);
+    background: linear-gradient(to bottom,  rgba(0,36,179,1) 0%,rgba(0,36,179,0.5) 33%,rgba(0,36,179,0) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0024b3', endColorstr='#000024b3',GradientType=0 );
+  }
+  
   .entry-content {
 		strong {
 			font-size: 1.5em;
@@ -50,11 +57,13 @@
   		 	width: 46.155%;
   		}
   		
+/*
   		&:nth-child(odd) { 
   			@include grid-media($xlarge) {
   				margin-top: 7em; 
   			}
   		}
+*/
   	}
   }
 
@@ -66,13 +75,20 @@
   	article {
   
   		// Speakers
-  		&:nth-child(1) { order: 1; }                      /* Carin */ 
-  		&:nth-child(2) { order: 2; }                      /* Ted */
-  		&:nth-child(3) { order: 5; @extend .spkr_alt; }   /* Neil */
-  		&:nth-child(4) { order: 6; @extend .spkr_alt; }   /* Jessica */
-  		&:nth-child(5) { order: 9; }                      /* Llewellyn */
-  		&:nth-child(6) { order: 10; }                     /* Koshin */
+  		&:nth-child(1) { order: 1; } 
+  		&:nth-child(2) { order: 2; } 
+  		&:nth-child(3) { order: 5; @extend .spkr_alt; }
+  		&:nth-child(4) { order: 6; @extend .spkr_alt; }
+  		&:nth-child(5) { order: 9; }
+  		&:nth-child(6) { order: 10; }
 
+  		// Callouts
+  		&:nth-child(7) { order: 3; }
+  		&:nth-child(8) { order: 4; @extend .ca_alt;}
+  		&:nth-child(9) { order: 7; @extend .ca_alt;}
+  		&:nth-child(10) { order: 8; }
+  		&:nth-child(11) { order: 11; }
+  		
   		// Shift left
   		&:nth-child(1) {
   			@include grid-media($xlarge) {
@@ -82,10 +98,12 @@
 
   		// Shift top 
   		&:nth-child(1) { @include grid-media($xlarge) { margin-top: -25em; } }
+/*
   		&:nth-child(2) { @include grid-media($xlarge) { margin-top: -10em; } }
   		&:nth-child(4) { @include grid-media($xlarge) { margin-top: -20em; } }
   		&:nth-child(5) { @include grid-media($xlarge) { margin-top: 15em; } }
   		&:nth-child(7) { @include grid-media($xlarge) { margin-top: 15em; } }
+*/
   		
 
       // Speaker numbers
@@ -96,24 +114,13 @@
 			&:nth-child(5) { .spkr h3:before { content: url('../img/nr_llewellyn_falco_nul.png'); } }
   		&:nth-child(6) { .spkr h3:before { content: url('../img/nr_koshin_mariano_nul.png'); } }
   		
-  		// Callouts
-  		&:nth-child(7) { order: 3; }
-  		&:nth-child(8) { order: 4; @extend .ca_alt;}
-  		&:nth-child(9) { order: 7; @extend .ca_alt;}
-  		&:nth-child(10) { order: 8; }
-  		&:nth-child(11) { order: 11; }
-  		
   		&:last-child .callout {
     		margin-bottom: 4em;
   		}
 
       
   		.spkr {
-    		
-    		a {
-      		display: block;
-    		}
-    		
+
     		h3 {
   			  position: relative;
   	

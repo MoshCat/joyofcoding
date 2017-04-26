@@ -5,9 +5,6 @@
   color: $blue;
 	position: relative;
  	margin-bottom: 7.5em;
-	@include grid-media($large) {
-  	margin-bottom: 16em;
-  }
 
   a {
     color: $blue;
@@ -35,7 +32,7 @@
 	.callout_wrap {
 		background-color: white;
     box-shadow: 57px 57px 177px 0 rgba(#fff600,.2);
-		padding: 2.5em;
+		padding: 3em;
 		@include grid-media($medium) {
 			width: 46.43%;
 		}
@@ -51,9 +48,9 @@
 	
 		.callout_content {
 			font-family: "Source Code Pro";
-			font-size: .875em;
+			font-size: .75em;
 			p {
-				line-height: 2.5em;
+				line-height: 3em;
 				&:last-child {
 					margin-bottom: 0;
 				}
