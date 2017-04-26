@@ -3,11 +3,14 @@
 --------------------------------------------------------------*/
 .page_home {
 	background-color: $red;
-	background-image: url('../img/bg_main.png'),url('../img/bg_pattern_pink.png');
+	background-image: url('../img/bg_mobile.jpg'),url('../img/bg_pattern_pink.png');
 	background-position: center top, center top;
 	background-size: 100%, auto;
 	background-repeat: no-repeat, repeat;
   color: white;
+	@include grid-media($medium) {
+  	background-image: url('../img/bg_main.png'),url('../img/bg_pattern_pink.png');
+  }
 
   .entry-content {
 		strong {
@@ -25,7 +28,7 @@
   		display: flex;
   		flex-flow: row wrap;
   		justify-content: center;
-  		@include grid-media($xlarge) {
+  		@include grid-media($large) {
   			justify-content: space-between;
   		}
   		
@@ -43,7 +46,7 @@
   		 	width: 75%;
   		}
   		
-  		@include grid-media($xlarge) {
+  		@include grid-media($large) {
   		 	width: 46.155%;
   		}
   		

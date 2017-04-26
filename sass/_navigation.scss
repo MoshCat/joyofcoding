@@ -3,7 +3,7 @@
 --------------------------------------------------------------*/
 #site-navigation {
 
-  @include grid-media($medium) {
+  @include grid-media($large) {
 		position: absolute;
 		top: 0;
 		right: 0;
@@ -16,7 +16,7 @@
   	li {
   		text-align: center;
 
-      @include grid-media($medium) {
+      @include grid-media($large) {
     		float: left;
         text-align: inherit;
     	}
@@ -34,12 +34,12 @@
   			text-decoration: none;
 				margin: .25em 2em;
 
-        @include grid-media($medium) {
+        @include grid-media($large) {
     			color: $red;
   				margin: 0;
   		  }
 
-        @include grid-media($medium) {
+        @include grid-media($large) {
     			background-color: inherit;
           line-height: 4.7em;
         }
@@ -59,7 +59,7 @@
   				transition: background-color $base-duration;
   				background-color: $red;
   				margin: 0 2em;
-          @include grid-media($medium) {
+          @include grid-media($large) {
     				margin: 0 0 0 2em;
     		  }
     			.page_home & {
@@ -92,7 +92,7 @@
 	display: block;
 }
 
-@include grid-media($medium) {
+@include grid-media($large) {
 	.menu-toggle {
 		display: none;
 	}

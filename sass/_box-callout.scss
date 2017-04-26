@@ -4,7 +4,10 @@
 .callout {
   color: $blue;
 	position: relative;
-	margin-bottom: 16em;
+ 	margin-bottom: 7.5em;
+	@include grid-media($large) {
+  	margin-bottom: 16em;
+  }
 
   a {
     color: $blue;
@@ -21,13 +24,11 @@
 	}
 
 	img {
-		position: absolute;
-		bottom: -2em;
-		right: 0;
-		z-index: -1;
-
 		@include grid-media($medium) {
-			right: 0;
+  		position: absolute;
+  		bottom: -2em;
+  		right: 0;
+  		z-index: -1;
 		}
 	}
 

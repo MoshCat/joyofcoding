@@ -1,26 +1,26 @@
 // Grid
 $neat-grid: (
   columns: 12,
+  gutter: 50px,
 );
 
 $nogutter: (
   gutter: 0
 );
 
+
+// Breakpoints
 $small: (
   media: 480px,
 );
 $medium: (
   media: 768px,
-  gutter: 60px,
 );
 $large: (
   media: 1024px,
-  gutter: 60px,
 );
 $xlarge: (
   media: 1440px,
-  gutter: 60px,
 );
 $xxlarge: (media: 1660px);
 

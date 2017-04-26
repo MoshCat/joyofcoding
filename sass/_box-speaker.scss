@@ -2,7 +2,11 @@
 # Speaker box
 --------------------------------------------------------------*/
 .spkr {
-	margin-bottom: 12em;
+ 	margin-bottom: 7.5em;
+	@include grid-media($large) {
+  	margin-bottom: 12em;
+  }
+
 	position: relative;
 
 	h3 {

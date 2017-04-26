@@ -1,14 +1,15 @@
 /*--------------------------------------------------------------
 # Layout
 --------------------------------------------------------------*/
-html {
-  box-sizing: border-box;
-}
-
 *,
 *::before,
 *::after {
   box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+	overflow-x: hidden;
 }
 
 body {
@@ -18,8 +19,17 @@ body {
 }
 
 .wrapper {
-	max-width: 90em;
+	max-width: 95em;
 	margin: 0 auto;
+}
+
+.padding {
+	padding-left: 1.5em;
+	padding-right: 1.5em;
+	@include grid-media($large) {
+		padding-left: 3.75em;
+		padding-right: 3.75em;
+	}
 }
 
 body {
@@ -35,6 +45,8 @@ body {
 
   > main {
     @include grid-container();
+//     @include grid-collapse();
+//     @extend .padding;
   	@include grid-media($medium) {
   		padding-top: 3em;
   	}

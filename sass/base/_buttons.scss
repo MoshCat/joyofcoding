@@ -29,7 +29,7 @@
 
 .btn_wrap {
 	display: table;
-	margin: 3.75em auto;
+	margin: 3em auto;
 	text-align: center;
 	@include grid-media($medium) {
 		margin: 4em auto;
@@ -50,8 +50,7 @@
   	font-weight: 600;
   	line-height: 1.5;
   	margin: 0 1.5em 1.5em;
-  	min-width: 12em;
-  	padding: $base-spacing * 1.25 $base-spacing * 1.75;
+  	padding: $small-spacing;
   	text-align: center;
   	text-decoration: none;
   	text-transform: uppercase;
@@ -59,13 +58,19 @@
   	user-select: none;
   	vertical-align: middle;
   	white-space: normal;
-  
+
+    @include grid-media($medium) {
+    	padding: $base-spacing * 1.25 $base-spacing * 1.75;
+      min-width: 12em;
+    }
+
   	&:hover,
   	&:focus {
   		background-color: white;
   		color: $action-color;
     	text-decoration: none;
   	}
+
   	span {
   		display: inline-block;
   		@include grid-media($medium) {
