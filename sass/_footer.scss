@@ -2,7 +2,13 @@
 # Footer Layout
 --------------------------------------------------------------*/
 aside#footer {
-	@include clearfix();
+  @include grid-container();
+  clear: both;
+  
+  a {
+    font-weight: bold;
+    font-family: "Source Code Pro";
+  }
 	
 	section {
 		padding: 1em;
@@ -35,6 +41,11 @@ aside#footer {
 			@include grid-media($small) {
 				width: 50%;
 				float: left;
+			}
+			p:last-child {
+  			border-bottom: 1px solid #fff;
+  			padding-bottom: 3em;
+  			margin-bottom: 3em;
 			}
 		}
 	}
@@ -80,6 +91,7 @@ aside#footer {
 		font-size: 1.25em;
 		text-transform: uppercase;
 		padding-top: .75em;
+		letter-spacing: -1px;
 		@include grid-media($large) {
 			font-size: 1.875em;	
 		}
@@ -102,7 +114,7 @@ aside#footer {
 		}
 	
 		li {
-			margin: 0 .325em;
+			margin: 0 .5em;
 			padding: .25em 0;
 		}
 		
@@ -146,7 +158,7 @@ footer#socket {
   
 	> span {
 		font-size: .875em;
-		margin-right: 2em;
+		margin-right: 2.5em;
 		
 		&:last-child {
 			margin-right: 0;

@@ -1,17 +1,27 @@
 // Grid
 $neat-grid: (
   columns: 12,
-  gutter: 60px,
 );
 
 $nogutter: (
   gutter: 0
 );
 
-$small: (media: 480px);
-$medium: (media: 768px);
-$large: (media: 1024px);
-$xlarge: (media: 1440px);
+$small: (
+  media: 480px,
+);
+$medium: (
+  media: 768px,
+  gutter: 60px,
+);
+$large: (
+  media: 1024px,
+  gutter: 60px,
+);
+$xlarge: (
+  media: 1440px,
+  gutter: 60px,
+);
 $xxlarge: (media: 1660px);
 
 // Typography

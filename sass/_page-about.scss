@@ -2,17 +2,10 @@
 # About
 --------------------------------------------------------------*/
 .page_about {
-/*
-	background-image: url('../img/bg_main.png'),url('../img/bg_pattern_pink.png');
+	background-image: url('../img/bg_about.jpg'),url('../img/bg_pattern_pink.png');
 	background-position: center top, center top;
 	background-size: 100%, auto;
 	background-repeat: no-repeat, repeat;
-*/
-
-	background-image: url('../img/bg_pattern_pink.png');
-	background-position: center top;
-	background-size: auto;
-	background-repeat: repeat;
 	
 	#organisation {
   	@extend .wrapper;
@@ -117,11 +110,11 @@
       }
       
       &.ag_box_1 {
-        background-image: url('http://placehold.it/640x480');
+        background-image: url('../img/photo_legal_stuff.jpg');
       }
 
       &.ag_box_2 {
-        background-image: url('http://placehold.it/640x480');
+        background-image: url('../img/photo_thanks_alumni.jpg');
       }
 
       .ag_box_wrap {

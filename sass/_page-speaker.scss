@@ -7,6 +7,15 @@ body.page_speaker {
 	background-repeat: no-repeat, no-repeat, repeat;
 
    
+  #masthead {
+  	height: 10em;
+    background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
+    background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%);
+    background: linear-gradient(to bottom, rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=0 );
+    
+  }
+
   > main {
     margin-top: 1em;
 
@@ -46,14 +55,20 @@ body.page_speaker {
       	}
 
       	.spkr_title {
+        	position: absolute;
         	font-size: 7.5em;
         	text-align: right;
         	line-height: 1em;
-        	margin-top: 8rem;
-        	margin-bottom: 6rem;
-        	z-index: 1;
           @include grid-media($medium) {
-          	margin-right: -5rem;
+          	margin-top: 10rem;
+          	margin-left: -15rem;
+          }
+      	}
+      	
+      	blockquote {
+          @include grid-media($medium) {
+          	margin-top: 30rem;
+          	margin-bottom: 6rem;
           }
       	}
       	

@@ -222,13 +222,40 @@ button:hover, button:focus, [type='button']:hover, [type='button']:focus, [type=
   color: #0024b3;
 }
 
-a.btn {
+.btn_wrap {
+  display: table;
+  margin: 3.75em auto;
+  text-align: center;
+}
+
+@media only screen and (min-width: 768px) {
+  .btn_wrap {
+    margin: 4em auto;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .btn_wrap {
+    margin: 7.5em auto;
+  }
+}
+
+@media only screen and (min-width: 1660px) {
+  .btn_wrap {
+    margin: 10em auto;
+  }
+}
+
+.btn_wrap a.btn {
   background-color: #0024b3;
   box-shadow: 0.75em 0.75em rgba(0, 18, 89, 0.5);
   color: #fff;
   cursor: pointer;
+  display: inline-block;
   font-weight: 600;
   line-height: 1.5;
+  margin: 0 1.5em 1.5em;
+  min-width: 12em;
   padding: 1.875em 2.625em;
   text-align: center;
   text-decoration: none;
@@ -241,40 +268,20 @@ a.btn {
           user-select: none;
   vertical-align: middle;
   white-space: normal;
-  display: table;
-  margin: 3.75em auto;
 }
 
-@media only screen and (min-width: 768px) {
-  a.btn {
-    margin: 4em auto;
-  }
-}
-
-@media only screen and (min-width: 1024px) {
-  a.btn {
-    margin: 7.5em auto;
-  }
-}
-
-@media only screen and (min-width: 1660px) {
-  a.btn {
-    margin: 10em auto;
-  }
-}
-
-a.btn:hover, a.btn:focus {
+.btn_wrap a.btn:hover, .btn_wrap a.btn:focus {
   background-color: white;
   color: #0024b3;
   text-decoration: none;
 }
 
-a.btn span {
+.btn_wrap a.btn span {
   display: inline-block;
 }
 
 @media only screen and (min-width: 768px) {
-  a.btn span:before {
+  .btn_wrap a.btn span:before {
     content: ' | ';
     padding: 0 .25em;
   }
@@ -491,7 +498,7 @@ h6 {
 
 h2 {
   font-size: 2em;
-  letter-spacing: -1px;
+  letter-spacing: -4px;
 }
 
 @media only screen and (min-width: 768px) {
@@ -514,7 +521,7 @@ h2 {
 
 h3 {
   font-size: 3em;
-  letter-spacing: -1px;
+  letter-spacing: -2px;
 }
 
 @media only screen and (min-width: 768px) {
@@ -628,10 +635,11 @@ html {
 body {
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
 }
 
-.wrapper, .page_about #organisation {
-  max-width: 95em;
+.wrapper, .page_about #organisation, .page-code_conduct #code_conduct {
+  max-width: 90em;
   margin: 0 auto;
 }
 
@@ -639,16 +647,6 @@ body {
   background-image: url("../img/bg_pattern_pink.png");
   background-position: center top;
   background-repeat: repeat;
-  /*
-  #masthead {
-  	height: 10em;
-    background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
-    background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%);
-    background: linear-gradient(to bottom, rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=0 );
-    
-  }
-*/
 }
 
 body.page_home #masthead {
@@ -682,10 +680,18 @@ body > main::after {
 }
 
 body > main > article {
-  width: calc(100% - 120px);
+  width: calc(100% - 40px);
   float: left;
-  margin-left: 60px;
+  margin-left: 20px;
   text-align: center;
+}
+
+@media only screen and (min-width: 768px) {
+  body > main > article {
+    width: calc(100% - 120px);
+    float: left;
+    margin-left: 60px;
+  }
 }
 
 @media only screen and (min-width: 768px) {
@@ -791,7 +797,7 @@ body > main > article {
 }
 
 #site-navigation ul li a.alt {
-  color: #0024b3;
+  color: white;
   padding: 0 4em;
   -webkit-transition: background-color 150ms;
   transition: background-color 150ms;
@@ -803,6 +809,10 @@ body > main > article {
   #site-navigation ul li a.alt {
     margin: 0 0 0 2em;
   }
+}
+
+.page_home #site-navigation ul li a.alt {
+  color: #0024b3;
 }
 
 #site-navigation ul li a.alt:hover, #site-navigation ul li a.alt:active {
@@ -940,9 +950,9 @@ body > main > article {
 }
 
 .page_home #lineup {
-  width: calc(100% - 120px);
+  width: calc(100% - 40px);
   float: left;
-  margin-left: 60px;
+  margin-left: 20px;
 }
 
 .page_home #lineup .lineup_container {
@@ -1041,13 +1051,36 @@ body > main > article {
 @media only screen and (min-width: 1440px) {
   .page_home #lineup article:nth-child(1) {
     margin-left: 51.845%;
-    margin-top: -20em;
   }
 }
 
 @media only screen and (min-width: 1440px) {
   .page_home #lineup article:nth-child(1) {
     margin-top: -25em;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .page_home #lineup article:nth-child(2) {
+    margin-top: -10em;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .page_home #lineup article:nth-child(4) {
+    margin-top: -20em;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .page_home #lineup article:nth-child(5) {
+    margin-top: 15em;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .page_home #lineup article:nth-child(7) {
+    margin-top: 15em;
   }
 }
 
@@ -1105,6 +1138,10 @@ body > main > article {
           order: 11;
 }
 
+.page_home #lineup article:last-child .callout {
+  margin-bottom: 4em;
+}
+
 .page_home #lineup article .spkr a {
   display: block;
 }
@@ -1131,15 +1168,9 @@ body > main > article {
   background-color: white;
   color: #0024b3;
   text-align: center;
-  width: calc(100% - 120px);
+  width: calc(100%);
   float: left;
-  margin-left: 60px;
-}
-
-.page_home #sponsors::after {
-  clear: both;
-  content: "";
-  display: block;
+  margin-left: 0;
 }
 
 .page_home #sponsors > section {
@@ -1155,8 +1186,7 @@ body > main > article {
 }
 
 .page_home #sponsors > section h2 {
-  font-size: 1.5em;
-  margin-bottom: 3em;
+  margin-bottom: 1em;
 }
 
 .page_home #sponsors > section ul {
@@ -1297,11 +1327,11 @@ body > main > article {
 }
 
 .page_home #video .videoPoster:hover:before, .page_home #video .videoPoster:focus:before {
-  border-color: #0024b3;
+  border-color: white;
 }
 
 .page_home #video .videoPoster:hover:after, .page_home #video .videoPoster:focus:after {
-  border-left-color: #0024b3;
+  border-left-color: white;
 }
 
 .page_home #video.videoWrapperActive .videoPoster {
@@ -1346,6 +1376,13 @@ body.page_speaker {
   background-repeat: no-repeat, no-repeat, repeat;
 }
 
+body.page_speaker #masthead {
+  height: 10em;
+  background: -webkit-linear-gradient(top, white 0%, rgba(255, 255, 255, 0) 100%);
+  background: linear-gradient(to bottom, white 0%, rgba(255, 255, 255, 0) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=0 );
+}
+
 body.page_speaker > main {
   margin-top: 1em;
 }
@@ -1355,9 +1392,9 @@ body.page_speaker > main > article > header {
 }
 
 body.page_speaker > main > article > header .container {
-  margin-left: -60px;
-  margin-right: -60px;
-  width: calc(100% + 120px);
+  margin-left: -20px;
+  margin-right: -20px;
+  width: calc(100% + 40px);
 }
 
 body.page_speaker > main > article > header .container::after {
@@ -1367,9 +1404,9 @@ body.page_speaker > main > article > header .container::after {
 }
 
 body.page_speaker > main > article > header .container .left {
-  width: calc(100% - 120px);
+  width: calc(100% - 40px);
   float: left;
-  margin-left: 60px;
+  margin-left: 20px;
 }
 
 @media only screen and (min-width: 768px) {
@@ -1381,9 +1418,9 @@ body.page_speaker > main > article > header .container .left {
 }
 
 body.page_speaker > main > article > header .container .right {
-  width: calc(100% - 120px);
+  width: calc(100% - 40px);
   float: left;
-  margin-left: 60px;
+  margin-left: 20px;
 }
 
 @media only screen and (min-width: 768px) {
@@ -1406,17 +1443,23 @@ body.page_speaker > main > article > header .spkr_meta {
 }
 
 body.page_speaker > main > article > header .spkr_title {
+  position: absolute;
   font-size: 7.5em;
   text-align: right;
   line-height: 1em;
-  margin-top: 8rem;
-  margin-bottom: 6rem;
-  z-index: 1;
 }
 
 @media only screen and (min-width: 768px) {
   body.page_speaker > main > article > header .spkr_title {
-    margin-right: -5rem;
+    margin-top: 10rem;
+    margin-left: -15rem;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  body.page_speaker > main > article > header blockquote {
+    margin-top: 30rem;
+    margin-bottom: 6rem;
   }
 }
 
@@ -1425,9 +1468,9 @@ body.page_speaker > main > article > header .spkr_image {
 }
 
 body.page_speaker > main .entry-content {
-  width: calc(100% - 120px);
+  width: calc(100% - 40px);
   float: left;
-  margin-left: 60px;
+  margin-left: 20px;
   font-family: "Source Code Pro";
 }
 
@@ -1455,9 +1498,9 @@ body.page_speaker > main .entry-content .btn {
 }
 
 body.page_speaker > main aside {
-  width: calc(100% - 120px);
+  width: calc(100% - 40px);
   float: left;
-  margin-left: 60px;
+  margin-left: 20px;
   position: relative;
 }
 
@@ -1490,10 +1533,25 @@ body.page_speaker > main aside:before {
 /*--------------------------------------------------------------
 # Schedule
 --------------------------------------------------------------*/
+body.page_schedule {
+  background-image: url("../img/bg_pattern_pink.png");
+  background-position: center top;
+  background-size: auto;
+  background-repeat: repeat;
+}
+
 body.page_schedule .schedule-grid {
-  width: calc(100% - 120px);
+  width: calc(100% - 40px);
   float: left;
-  margin-left: 60px;
+  margin-left: 20px;
+}
+
+@media only screen and (min-width: 768px) {
+  body.page_schedule .schedule-grid {
+    width: calc(100% - 120px);
+    float: left;
+    margin-left: 60px;
+  }
 }
 
 body.page_schedule .schedule-grid ul.sg_timeslot {
@@ -1550,7 +1608,17 @@ body.page_schedule .schedule-grid ul.sg_timeslot li {
 }
 
 body.page_schedule .schedule-grid ul.sg_timeslot li.sg_timeslot_header {
-  width: 80px;
+  color: #888;
+  width: 30px;
+  text-align: center;
+  display: none;
+}
+
+@media only screen and (min-width: 768px) {
+  body.page_schedule .schedule-grid ul.sg_timeslot li.sg_timeslot_header {
+    display: block;
+    width: 80px;
+  }
 }
 
 body.page_schedule .schedule-grid ul.sg_timeslot li.sg_event {
@@ -1644,28 +1712,22 @@ body.page_schedule .schedule-grid ul.sg_timeslot li.sg_event_empty {
 # About
 --------------------------------------------------------------*/
 .page_about {
-  /*
-	background-image: url('../img/bg_main.png'),url('../img/bg_pattern_pink.png');
-	background-position: center top, center top;
-	background-size: 100%, auto;
-	background-repeat: no-repeat, repeat;
-*/
-  background-image: url("../img/bg_pattern_pink.png");
-  background-position: center top;
-  background-size: auto;
-  background-repeat: repeat;
+  background-image: url("../img/bg_about.jpg"), url("../img/bg_pattern_pink.png");
+  background-position: center top, center top;
+  background-size: 100%, auto;
+  background-repeat: no-repeat, repeat;
 }
 
 .page_about #organisation article {
-  width: calc(100% - 120px);
+  width: calc(100% - 40px);
   float: left;
-  margin-left: 60px;
+  margin-left: 20px;
 }
 
 .page_about .about_grid {
-  margin-left: -60px;
-  margin-right: -60px;
-  width: calc(100% + 120px);
+  margin-left: -20px;
+  margin-right: -20px;
+  width: calc(100% + 40px);
   /*--------------------------------------------------------------
     # Person
     --------------------------------------------------------------*/
@@ -1693,9 +1755,9 @@ body.page_schedule .schedule-grid ul.sg_timeslot li.sg_event_empty {
 .page_about .about_grid .ag_item {
   border-top: 1px solid #0024b3;
   position: relative;
-  width: calc(100% - 120px);
+  width: calc(100% - 40px);
   float: left;
-  margin-left: 60px;
+  margin-left: 20px;
 }
 
 @media only screen and (min-width: 768px) {
@@ -1765,9 +1827,9 @@ body.page_schedule .schedule-grid ul.sg_timeslot li.sg_event_empty {
   background-repeat: no-repeat;
   padding-bottom: 20em;
   background-size: contain;
-  width: calc(100% - 120px);
+  width: calc(100% - 40px);
   float: left;
-  margin-left: 60px;
+  margin-left: 20px;
 }
 
 @media only screen and (min-width: 768px) {
@@ -1786,17 +1848,17 @@ body.page_schedule .schedule-grid ul.sg_timeslot li.sg_event_empty {
 }
 
 .page_about .about_grid .ag_box.ag_box_1 {
-  background-image: url("http://placehold.it/640x480");
+  background-image: url("../img/photo_legal_stuff.jpg");
 }
 
 .page_about .about_grid .ag_box.ag_box_2 {
-  background-image: url("http://placehold.it/640x480");
+  background-image: url("../img/photo_thanks_alumni.jpg");
 }
 
 .page_about .about_grid .ag_box .ag_box_wrap {
-  margin-left: -60px;
-  margin-right: -60px;
-  width: calc(100% + 120px);
+  margin-left: -20px;
+  margin-right: -20px;
+  width: calc(100% + 40px);
 }
 
 .page_about .about_grid .ag_box .ag_box_wrap::after {
@@ -1811,9 +1873,9 @@ body.page_schedule .schedule-grid ul.sg_timeslot li.sg_event_empty {
   font-size: .875em;
   padding: 40px;
   margin-bottom: 1.5em;
-  width: calc(100% - 120px);
+  width: calc(100% - 40px);
   float: left;
-  margin-left: 60px;
+  margin-left: 20px;
 }
 
 @media only screen and (min-width: 768px) {
@@ -1838,10 +1900,134 @@ body.page_schedule .schedule-grid ul.sg_timeslot li.sg_event_empty {
 }
 
 /*--------------------------------------------------------------
+# Code of conduct
+--------------------------------------------------------------*/
+.page-code_conduct {
+  background-image: url("../img/bg_pattern_pink.png");
+  background-position: center top;
+  background-repeat: repeat;
+  /*--------------------------------------------------------------
+  # Code of conduct
+  --------------------------------------------------------------*/
+}
+
+.page-code_conduct #code_conduct article .entry-content > div {
+  margin-bottom: 2.5em;
+}
+
+.page-code_conduct #code_conduct article .intro {
+  font-size: 1.25em;
+  width: calc(100% - 40px);
+  float: left;
+  margin-left: 20px;
+}
+
+@media only screen and (min-width: 768px) {
+  .page-code_conduct #code_conduct article .intro {
+    width: calc(58.3333333333% - 95px);
+    float: left;
+    margin-left: 60px;
+    margin-left: calc(41.6666666667% - 85px + 120px);
+    margin-bottom: 5em;
+  }
+}
+
+.page-code_conduct #code_conduct article .harrassment {
+  width: calc(100% - 40px);
+  float: left;
+  margin-left: 20px;
+}
+
+@media only screen and (min-width: 768px) {
+  .page-code_conduct #code_conduct article .harrassment {
+    width: calc(58.3333333333% - 95px);
+    float: left;
+    margin-left: 60px;
+  }
+}
+
+.page-code_conduct #code_conduct article .help {
+  width: calc(100% - 40px);
+  float: left;
+  margin-left: 20px;
+}
+
+@media only screen and (min-width: 768px) {
+  .page-code_conduct #code_conduct article .help {
+    width: calc(41.6666666667% - 85px);
+    float: left;
+    margin-left: 60px;
+  }
+}
+
+.page-code_conduct #code_conduct article .offensive-content {
+  width: calc(100% - 40px);
+  float: left;
+  margin-left: 20px;
+}
+
+@media only screen and (min-width: 768px) {
+  .page-code_conduct #code_conduct article .offensive-content {
+    width: calc(33.3333333333% - 80px);
+    float: left;
+    margin-left: 60px;
+  }
+}
+
+.page-code_conduct #code_conduct article .alcohol {
+  width: calc(100% - 40px);
+  float: left;
+  margin-left: 20px;
+}
+
+@media only screen and (min-width: 768px) {
+  .page-code_conduct #code_conduct article .alcohol {
+    width: calc(33.3333333333% - 80px);
+    float: left;
+    margin-left: 60px;
+  }
+}
+
+.page-code_conduct #code_conduct article .compliance {
+  width: calc(100% - 40px);
+  float: left;
+  margin-left: 20px;
+}
+
+@media only screen and (min-width: 768px) {
+  .page-code_conduct #code_conduct article .compliance {
+    width: calc(33.3333333333% - 80px);
+    float: left;
+    margin-left: 60px;
+  }
+}
+
+.page-code_conduct #code_conduct article .credits {
+  width: calc(100% - 40px);
+  float: left;
+  margin-left: 20px;
+  margin-bottom: 3em;
+}
+
+@media only screen and (min-width: 768px) {
+  .page-code_conduct #code_conduct article .credits {
+    width: calc(100% - 120px);
+    float: left;
+    margin-left: 60px;
+  }
+}
+
+.page-code_conduct #code_conduct article h3 {
+  font-size: 1.5em;
+  letter-spacing: -1px;
+}
+
+/*--------------------------------------------------------------
 # Speaker box
 --------------------------------------------------------------*/
 .spkr {
   margin-bottom: 12em;
+  position: relative;
 }
 
 .spkr h3 {
@@ -1894,6 +2080,24 @@ body.page_schedule .schedule-grid ul.sg_timeslot li.sg_event_empty {
   }
 }
 
+.spkr .spkr_meta {
+  font-size: .75em;
+  position: absolute;
+  text-transform: uppercase;
+  top: 1em;
+  left: 2rem;
+}
+
+@media only screen and (min-width: 768px) {
+  .spkr .spkr_meta {
+    left: 25%;
+  }
+}
+
+.spkr .spkr_meta .times {
+  white-space: nowrap;
+}
+
 .spkr .spkr_content {
   margin-bottom: 2em;
 }
@@ -1904,7 +2108,7 @@ body.page_schedule .schedule-grid ul.sg_timeslot li.sg_event_empty {
   }
 }
 
-.spkr span {
+.spkr .spkr_social {
   font-family: "Source Code Pro";
   font-size: .9375em;
   font-weight: bold;
@@ -1912,19 +2116,19 @@ body.page_schedule .schedule-grid ul.sg_timeslot li.sg_event_empty {
 }
 
 @media only screen and (min-width: 768px) {
-  .spkr span {
+  .spkr .spkr_social {
     position: absolute;
     margin-top: -2em;
     right: 0%;
   }
 }
 
-.spkr span a {
+.spkr .spkr_social a {
   color: white;
   text-decoration: none;
 }
 
-.spkr span a:hover, .spkr span a:active {
+.spkr .spkr_social a:hover, .spkr .spkr_social a:active {
   text-decoration: underline;
 }
 
@@ -2106,10 +2310,19 @@ body.page_schedule .schedule-grid ul.sg_timeslot li.sg_event_empty {
 /*--------------------------------------------------------------
 # Footer Layout
 --------------------------------------------------------------*/
+aside#footer {
+  clear: both;
+}
+
 aside#footer::after {
   clear: both;
   content: "";
   display: block;
+}
+
+aside#footer a {
+  font-weight: bold;
+  font-family: "Source Code Pro";
 }
 
 aside#footer section {
@@ -2169,6 +2382,12 @@ aside#footer .wrap section::after {
   }
 }
 
+aside#footer .wrap section p:last-child {
+  border-bottom: 1px solid #fff;
+  padding-bottom: 3em;
+  margin-bottom: 3em;
+}
+
 /*--------------------------------------------------------------
 # Footer Content
 --------------------------------------------------------------*/
@@ -2213,6 +2432,7 @@ aside#footer h2 {
   font-size: 1.25em;
   text-transform: uppercase;
   padding-top: .75em;
+  letter-spacing: -1px;
 }
 
 @media only screen and (min-width: 1024px) {
@@ -2243,7 +2463,7 @@ aside#footer ul.social {
 }
 
 aside#footer ul.social li {
-  margin: 0 .325em;
+  margin: 0 .5em;
   padding: .25em 0;
 }
 
@@ -2298,7 +2518,7 @@ footer#socket a:hover, footer#socket a:active {
 
 footer#socket > span {
   font-size: .875em;
-  margin-right: 2em;
+  margin-right: 2.5em;
 }
 
 footer#socket > span:last-child {

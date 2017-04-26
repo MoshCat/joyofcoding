@@ -2,9 +2,16 @@
 # Schedule
 --------------------------------------------------------------*/
 body.page_schedule {
+	background-image: url('../img/bg_pattern_pink.png');
+	background-position: center top;
+	background-size: auto;
+	background-repeat: repeat;
 	
 	.schedule-grid {
     @include grid-column(12);
+    @include grid-media($medium) {
+      @include grid-column(12);
+    }
 
     ul.sg_timeslot {
       @include clearfix();
@@ -41,7 +48,14 @@ body.page_schedule {
         }
   
         &.sg_timeslot_header {
-          width: 80px;
+          color: #888;
+          width: 30px;
+          text-align: center;
+          display: none;
+          @include grid-media($medium) {
+            display: block;
+            width: 80px;
+          }
         }
   
         &.sg_event {

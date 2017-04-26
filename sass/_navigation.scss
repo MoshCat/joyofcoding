@@ -54,7 +54,7 @@
   			}
   			
   			&.alt {
-  				color: $blue;
+  				color: white;
   				padding: 0 4em;
   				transition: background-color $base-duration;
   				background-color: $red;
@@ -62,6 +62,9 @@
           @include grid-media($medium) {
     				margin: 0 0 0 2em;
     		  }
+    			.page_home & {
+    				color: $blue;
+    			}
   				&:hover,
   				&:active {
   					background: white;

@@ -70,20 +70,20 @@
   		&:nth-child(5) { order: 9; }                      /* Llewellyn */
   		&:nth-child(6) { order: 10; }                     /* Koshin */
 
-  		// Shift first
+  		// Shift left
   		&:nth-child(1) {
   			@include grid-media($xlarge) {
   				margin-left: 51.845%;
-  				margin-top: -20em; 
   			}
   		}
 
-  		// Shift Second
-  		&:nth-child(1) {
-  			@include grid-media($xlarge) {
-  				margin-top: -25em;  
-  			}
-  		}
+  		// Shift top 
+  		&:nth-child(1) { @include grid-media($xlarge) { margin-top: -25em; } }
+  		&:nth-child(2) { @include grid-media($xlarge) { margin-top: -10em; } }
+  		&:nth-child(4) { @include grid-media($xlarge) { margin-top: -20em; } }
+  		&:nth-child(5) { @include grid-media($xlarge) { margin-top: 15em; } }
+  		&:nth-child(7) { @include grid-media($xlarge) { margin-top: 15em; } }
+  		
 
       // Speaker numbers
   		&:nth-child(1) { .spkr h3:before { content: url('../img/nr_carin_meier_zeven.png'); } }
@@ -99,6 +99,10 @@
   		&:nth-child(9) { order: 7; @extend .ca_alt;}
   		&:nth-child(10) { order: 8; }
   		&:nth-child(11) { order: 11; }
+  		
+  		&:last-child .callout {
+    		margin-bottom: 4em;
+  		}
 
       
   		.spkr {
@@ -133,8 +137,7 @@
     background-color: white;
     color: $blue;
   	text-align: center;
-    @include grid-column(12);
-    @include clearfix();
+    @include grid-column(12,$nogutter);
     > section {
     	padding-top: 2em;
     	padding-bottom: 2em;
@@ -146,8 +149,7 @@
     	}
     	
     	h2 {
-      	font-size: 1.5em;
-      	margin-bottom: 3em;
+      	margin-bottom: 1em;
     	}
     
     	ul {
@@ -256,10 +258,10 @@
       &:hover,
       &:focus {
         &:before {
-          border-color: $blue;
+          border-color: white;
         }
         &:after {
-          border-left-color: $blue;
+          border-left-color: white;
         }
       }
     }

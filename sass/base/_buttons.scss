@@ -27,25 +27,10 @@
 	}
 }
 
-
-a.btn {
-	background-color: $action-color;
-	box-shadow: .75em .75em rgba(shade($action-color,50%),.5);
-	color: #fff;
-	cursor: pointer;
-	font-weight: 600;
-	line-height: 1.5;
-	padding: $base-spacing * 1.25 $base-spacing * 1.75;
-	text-align: center;
-	text-decoration: none;
-	text-transform: uppercase;
-	transition: background-color $base-duration $base-timing, color $base-duration $base-timing;
-	user-select: none;
-	vertical-align: middle;
-	white-space: normal;
-
+.btn_wrap {
 	display: table;
 	margin: 3.75em auto;
+	text-align: center;
 	@include grid-media($medium) {
 		margin: 4em auto;
 	}
@@ -56,19 +41,39 @@ a.btn {
 		margin: 10em auto;
 	}
 
-	&:hover,
-	&:focus {
-		background-color: white;
-		color: $action-color;
+  a.btn {
+  	background-color: $action-color;
+  	box-shadow: .75em .75em rgba(shade($action-color,50%),.5);
+  	color: #fff;
+  	cursor: pointer;
+ 		display: inline-block;
+  	font-weight: 600;
+  	line-height: 1.5;
+  	margin: 0 1.5em 1.5em;
+  	min-width: 12em;
+  	padding: $base-spacing * 1.25 $base-spacing * 1.75;
+  	text-align: center;
   	text-decoration: none;
-	}
-	span {
-		display: inline-block;
-		@include grid-media($medium) {
-			&:before {
-				content: ' | ';
-				padding: 0 .25em;
-			}
-		}
-	}
+  	text-transform: uppercase;
+  	transition: background-color $base-duration $base-timing, color $base-duration $base-timing;
+  	user-select: none;
+  	vertical-align: middle;
+  	white-space: normal;
+  
+  	&:hover,
+  	&:focus {
+  		background-color: white;
+  		color: $action-color;
+    	text-decoration: none;
+  	}
+  	span {
+  		display: inline-block;
+  		@include grid-media($medium) {
+  			&:before {
+  				content: ' | ';
+  				padding: 0 .25em;
+  			}
+  		}
+  	}
+  }
 }
