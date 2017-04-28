@@ -2060,7 +2060,7 @@ body.page_schedule .schedule-grid ul.sg_timeslot li.sg_event_empty {
 }
 
 .page_about .about_grid .ag_item .ag_item_title {
-  font-size: 3em;
+  font-size: 2em;
   position: absolute;
   top: 9rem;
   padding-right: 1em;
@@ -2440,15 +2440,11 @@ body.page_schedule .schedule-grid ul.sg_timeslot li.sg_event_empty {
   position: absolute;
   text-transform: uppercase;
   top: 1em;
-  left: 2rem;
-}
-
-@media only screen and (min-width: 768px) {
-  .spkr .spkr_meta {
-    -webkit-transform: translateX(-50%);
-            transform: translateX(-50%);
-    left: 50%;
-  }
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  left: 50%;
+  width: 100%;
+  text-align: center;
 }
 
 .spkr .spkr_meta .times {
