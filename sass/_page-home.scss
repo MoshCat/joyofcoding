@@ -13,15 +13,22 @@
   }
 
   #masthead {
-    background: -moz-linear-gradient(top,  rgba(0,36,179,1) 0%, rgba(0,36,179,0.5) 33%, rgba(0,36,179,0) 100%);
-    background: -webkit-linear-gradient(top,  rgba(0,36,179,1) 0%,rgba(0,36,179,0.5) 33%,rgba(0,36,179,0) 100%);
-    background: linear-gradient(to bottom,  rgba(0,36,179,1) 0%,rgba(0,36,179,0.5) 33%,rgba(0,36,179,0) 100%);
+    background: -moz-linear-gradient(top,  rgba(0,36,179,1) 0%, rgba(0,36,179,0.5) 30%, rgba(0,36,179,0) 100%);
+    background: -webkit-linear-gradient(top,  rgba(0,36,179,1) 0%,rgba(0,36,179,0.5) 30%,rgba(0,36,179,0) 100%);
+    background: linear-gradient(to bottom,  rgba(0,36,179,1) 0%,rgba(0,36,179,0.5) 30%,rgba(0,36,179,0) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0024b3', endColorstr='#000024b3',GradientType=0 );
   }
   
   .entry-content {
 		strong {
 			font-size: 1.5em;
+			letter-spacing: -.06125em;
+		}
+		
+		.btn_wrap {
+      @include grid-media($large) {
+        margin-left: 15%;
+      }
 		}
   }
 
@@ -50,7 +57,7 @@
 
    		@include grid-media($medium) {
   		 	margin-top: 0;	
-  		 	width: 75%;
+  		 	width: 85%;
   		}
   		
   		@include grid-media($large) {
@@ -97,21 +104,24 @@
   		}
 
   		// Shift top 
-  		&:nth-child(1) { @include grid-media($xlarge) { margin-top: -25em; } }
-/*
-  		&:nth-child(2) { @include grid-media($xlarge) { margin-top: -10em; } }
-  		&:nth-child(4) { @include grid-media($xlarge) { margin-top: -20em; } }
-  		&:nth-child(5) { @include grid-media($xlarge) { margin-top: 15em; } }
-  		&:nth-child(7) { @include grid-media($xlarge) { margin-top: 15em; } }
-*/
-  		
+  		&:nth-child(1) { @include grid-media($xlarge) { margin-top: -20em; } }
+  		&:nth-child(2) { @include grid-media($xlarge) { margin-top: -12em; } }
+  		&:nth-child(3) { @include grid-media($xlarge) { margin-top: 20em; } } // Neil
+  		&:nth-child(4) { @include grid-media($xlarge) { margin-top: -12em; } } // Kerr
+  		&:nth-child(5) { @include grid-media($xlarge) { margin-top: 20em; } } // Falco
+  		&:nth-child(6) { @include grid-media($xlarge) { margin-top: -8em; } } // Mariano
+  		&:nth-child(7) { @include grid-media($xlarge) { margin-top: 20em; } }
+  		&:nth-child(8) { @include grid-media($xlarge) { margin-top: -12em; } } // Its by devs
+  		&:nth-child(9) { @include grid-media($xlarge) { margin-top: 25em; } } // Affordable
+  		&:nth-child(10) { @include grid-media($xlarge) { margin-top: -10em; } } // Code of
+  		&:nth-child(11) { @include grid-media($xlarge) { margin-top: 16em; } } // Previous
 
       // Speaker numbers
   		&:nth-child(1) { .spkr h3:before { content: url('../img/nr_carin_meier_zeven.png'); } }
-  		&:nth-child(2) { .spkr h3:before { content: url('../img/nr_ted_neward_zes.png'); } }
-  		&:nth-child(3) { .spkr h3:before { content: url('../img/nr_neil_ford_een.png'); } }
-  		&:nth-child(4) { .spkr h3:before { content: url('../img/nr_jessica_kerr_drie.png'); } }
-			&:nth-child(5) { .spkr h3:before { content: url('../img/nr_llewellyn_falco_nul.png'); } }
+  		&:nth-child(2) { .spkr h3:before { content: url('../img/nr_neil_ford_een.png'); } }
+  		&:nth-child(3) { .spkr h3:before { content: url('../img/nr_koshin_mariano_nul.png'); } }
+  		&:nth-child(4) { .spkr h3:before { content: url('../img/nr_ted_neward_zes.png'); } }
+			&:nth-child(5) { .spkr h3:before { content: url('../img/nr_jessica_kerr_drie.png'); } }
   		&:nth-child(6) { .spkr h3:before { content: url('../img/nr_koshin_mariano_nul.png'); } }
   		
   		&:last-child .callout {
@@ -131,7 +141,8 @@
     				right: -2.5rem;
     				@include grid-media($medium) {
     					right: -2.5rem;
-    					left: auto;
+    					left: 50%;
+              transform: translateX( -50% );
     				}
     			}
     		}
@@ -144,22 +155,26 @@
   # Sponsors
   --------------------------------------------------------------*/
   #sponsors {
+    @include clearfix();
     background-color: white;
     color: $blue;
   	text-align: center;
-    @include grid-column(12,$nogutter);
     > section {
     	padding-top: 2em;
     	padding-bottom: 2em;
-    	
-    
+    @include grid-column(12);
+  		padding-top: 6em;
     	@include grid-media($large) {
-    		padding-top: 5em;
+    		padding-top: 12.5em;
         padding-bottom: 7em;
     	}
     	
     	h2 {
-      	margin-bottom: 1em;
+      	margin-bottom: 2em;
+    	}
+    	
+    	p {
+    		margin-bottom: 2em;
     	}
     
     	ul {
@@ -171,24 +186,48 @@
     		list-style: none;
     		@include grid-media($large) {
     			max-width: 66%;
+    			margin-bottom: 3em;
     		}
     		
     		li {
-    			flex-basis: 100%;
-          padding: .5em 3em;
     			margin-bottom: 3em;
-    			@include grid-media($small) {
-    				flex-basis: 50%;
-    			}
+  				flex-basis: 50%;
+          padding: .5em .5em;
+
+  				@include grid-media($medium) {
+            padding: .5em 1em;
+  				}
+
+  				@include grid-media($large) {
+            padding: .5em 1.5em;
+  				}
     		}
     
     
+    		&#partner_logos {	
+     			max-width: 90%;
+
+  				@include grid-media($medium) {
+            max-width: 75%;
+  				}
+  				@include grid-media($large) {
+            max-width: 60%;
+  				}
+
+    			li {
+    				flex-basis: 100%;
+    				@include grid-media($medium) {
+    					flex-basis: 50%;
+    				}
+    			}
+    		}
     		&#sponsor_logos {		
       		@include grid-media($large) {
       			max-width: 70%;
       		}
 
     			li {
+    				flex-basis: 50%;
     				@include grid-media($medium) {
     					flex-basis: 33%;
     				}

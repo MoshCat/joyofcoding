@@ -21,6 +21,7 @@ aside#footer {
 	}
 	
 	#contact {
+  	color: $blue;
 		width: 100%;
 		@include grid-media($medium) {
 			width: 33.33%;
@@ -45,7 +46,7 @@ aside#footer {
 			p:last-child {
   			border-bottom: 1px solid #fff;
   			padding-bottom: 3em;
-  			margin-bottom: 3em;
+//   			margin-bottom: 3em;
 			}
 		}
 	}

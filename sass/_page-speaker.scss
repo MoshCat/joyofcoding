@@ -2,7 +2,7 @@
 # Speaker page
 --------------------------------------------------------------*/
 body.page_speaker {
-	background-image: url('../img/nr_big_3.png'),url('../img/nr_big_3_cutoff.png'),url('../img/bg_pattern_pink.png');
+	background-image: url('../img/nr_big_3.png'),url('../img/nr_big_3_cutoff.png'),url('../img/bg_pattern_white.png');
 	background-position: right top, left bottom, center top;
 	background-repeat: no-repeat, no-repeat, repeat;
 	background-size: 75%, auto, auto;
@@ -11,10 +11,15 @@ body.page_speaker {
   }
 
 
-  > main {
-    padding-top: 0;
+  > .speaker-content {
   	@extend .wrapper;
+    @extend .padding;
+		padding-top: 6em;
 
+  	@include grid-media($xlarge) {
+  		padding-top: 10em;
+  	}
+  	
     > article {
       text-align: left;
 
@@ -39,39 +44,58 @@ body.page_speaker {
       	}
 
       	.spkr_title {
-        	font-size: 4em;
         	line-height: 1em;
-        	margin: 2.5rem 0;
+        	margin-top: 2rem;
+        	margin-bottom: 2rem;
           text-align: right;
+         	font-size: 3.25em;
           @include grid-column(12);
           @include grid-media($medium) {
+          	font-size: 5em;
             position: absolute;
             top: 50%;
             left: 50%;
-            transform: translate(-70%, -50%);
-            font-size: 7.5em;
+            transform: translate(-75%, -50%);
             width: auto;
             margin: 0;
+          }
+
+          @include grid-media($large) {
+            font-size: 5em;
+          }
+
+          @include grid-media($xlarge) {
+            font-size: 7.5em;
           }
       	}
       	
       	blockquote {
-        margin-bottom: 0;
-        @include grid-column(12);
-        @include grid-media($medium) {
-          @include grid-column(6);
+          margin-bottom: 0;
+         	font-size: 1.5em;
+          @include grid-column(12);
+          @include grid-media($medium) {
+            @include grid-column(12);
             position: absolute;
             bottom: 0;
-          }
+        	}
+          @include grid-media($large) {
+           	font-size: 2em;
+            @include grid-column(10);
+              position: absolute;
+              bottom: 0;
+           }
+
+          @include grid-media($xxlarge) {
+            @include grid-column(6);
+           }
       	}
       	
       	.spkr_image {
-          padding-right: 3em;
           @include grid-column(12);
           @include grid-media($medium) {
             @include grid-column(6);
             @include grid-shift(3);
-            padding-right: 0em;
+            margin-bottom: 5em;
           }
           @include grid-media($large) {
             @include grid-column(5);
@@ -88,7 +112,6 @@ body.page_speaker {
       @include grid-collapse();
 
       .bio {
-        font-family: "Source Code Pro";
         @include grid-column(12);
         @include grid-media($medium) {
           @include grid-column(6);
@@ -96,6 +119,7 @@ body.page_speaker {
   
         p,
         ul {
+          font-family: "Source Code Pro";
           line-height: 2.25em;
         }
         
@@ -109,15 +133,19 @@ body.page_speaker {
       }
 
       aside {
+        position: relative;
         @include grid-column(12);
         @include grid-media($medium) {
-          @include grid-column(6);
+          @include grid-column(5);
         }
-        @include grid-media($large) {
+        @include grid-media($xlarge) {
           @include grid-column(3);
         }
-        position: relative;
         
+        p {
+          line-height: 2.25em;
+        }
+
         section {
           font-size: 0.8125em;
           padding-top: 1.5em;

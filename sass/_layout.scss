@@ -33,7 +33,7 @@ body {
 }
 
 body {
-	background-image: url('../img/bg_pattern_pink.png');
+	background-image: url('../img/bg_pattern_white.png');
 	background-position: center top;
 	background-repeat: repeat;
 	
@@ -46,40 +46,50 @@ body {
 */
 
   > main {
-    @include grid-container();
 		padding-top: 8em;
+    @include grid-container();
+    @include grid-collapse();
+    @extend .padding;
+
   	@include grid-media($medium) {
   		padding-top: 12.5em;
   	}
 
   	@include grid-media($large) {
-  		padding-top: 15em;
+  		padding-top: 14em;
   	}
 
   	@include grid-media($xlarge) {
-  		padding-top: 20em;
+  		padding-top: 16em;
   	}
 
     > article {
   		text-align: center;
       @include grid-column(12);
-    	@include grid-media($medium) {
-        @include grid-column(12);
+
+    	@include grid-media($xlarge) {
+        @include grid-column(9);
     	}
 
- 			.entry-content {
-   			margin-bottom: 3em;
-    		@include grid-media($medium) {
-     			text-align: left;
-    		}
+    	@include grid-media($xxlarge) {
+        @include grid-column(8);
+    	}
 
-    		@include grid-media($large) {
-    			max-width: 80%;
+			.entry-content {
+  			margin-bottom: 3em;
+
+    		@include grid-media($medium) {
+          text-align: left;
           margin-bottom: 5em;
     		}
 
+    		@include grid-media($large) {
+//     			max-width: 70em;
+          margin-bottom: 7em;
+    		}
+
     		@include grid-media($xlarge) {
-  				max-width: 66%;
+          margin-bottom: 10em;
     		}
    		}
     }

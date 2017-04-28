@@ -2,7 +2,6 @@
 # Navigation
 --------------------------------------------------------------*/
 #site-navigation {
-
   @include grid-media($large) {
 		position: absolute;
 		top: 0;
@@ -12,6 +11,10 @@
 	ul {
   	display: none;
     margin-bottom: 2em;
+    margin-top: 5.5em;
+    @include grid-media($large) {
+      margin-top: 0;
+    }
 
   	li {
   		text-align: center;
@@ -32,14 +35,11 @@
   			padding: 0 1.25em;
   			text-transform: uppercase;
   			text-decoration: none;
-				margin: .25em 2em;
+				margin: .25em 1.5em;
 
         @include grid-media($large) {
     			color: $red;
   				margin: 0;
-  		  }
-
-        @include grid-media($large) {
     			background-color: inherit;
           line-height: 4.7em;
         }
@@ -58,7 +58,7 @@
   				padding: 0 4em;
   				transition: background-color $base-duration;
   				background-color: $red;
-  				margin: 0 2em;
+  				margin: 0 1.5em;
           @include grid-media($large) {
     				margin: 0 0 0 2em;
     		  }
@@ -82,8 +82,8 @@
 #masthead {
 	button {
 		position: absolute;
-		right: 10px;
-		top: 10px;
+		right: 15px;
+		top: 15px;
 	}
 }
 

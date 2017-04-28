@@ -5,6 +5,9 @@
   color: $blue;
 	position: relative;
  	margin-bottom: 7.5em;
+	@include grid-media($medium) {
+   	margin-bottom: 12.5em;
+	}
 
   a {
     color: $blue;
@@ -21,12 +24,11 @@
 	}
 
 	img {
-		@include grid-media($medium) {
-  		position: absolute;
-  		bottom: -2em;
-  		right: 0;
-  		z-index: -1;
-		}
+		position: absolute;
+		bottom: -2em;
+		right: 0;
+		z-index: -1;
+		width: 95%;
 	}
 
 	.callout_wrap {

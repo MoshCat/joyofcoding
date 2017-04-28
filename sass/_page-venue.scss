@@ -1,0 +1,52 @@
+/*--------------------------------------------------------------
+# Venue
+--------------------------------------------------------------*/
+.page-venue {
+
+  #venue {
+
+    article {
+      @extend .wrapper;
+
+      .entry-content > div {
+        margin-bottom: 2.5em;
+      }
+
+      .intro {
+        font-size: 1.25em;
+        @include grid-column(12);
+        @include grid-media($medium) {
+          @include grid-column(7);
+          @include grid-push(5);
+         	margin-bottom: 5em;
+        }
+      }
+      .getting-there {
+        @include grid-column(12);
+        @include grid-media($medium) {
+          @include grid-column(7);
+        }
+      }
+      .facilities {
+        @include grid-column(12);
+        @include grid-media($medium) {
+          @include grid-column(5);
+          @include grid-push(7);
+        }
+      }
+      
+      .about-rotterdam {
+        @include grid-column(12);
+        @include grid-media($medium) {
+          @include grid-column(7);
+        }
+      }
+
+
+      h3 {
+        font-size: 1.5em;
+        letter-spacing: -1px;
+      }
+	  }
+  }
+}

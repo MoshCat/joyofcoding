@@ -32,10 +32,7 @@
 	margin: 3em auto;
 	text-align: center;
 	@include grid-media($medium) {
-		margin: 4em auto;
-	}
-	@include grid-media($large) {
-		margin: 7.5em auto;
+		margin: 7em auto;
 	}
 	@include grid-media($xxlarge) {
 		margin: 10em auto;
@@ -50,7 +47,7 @@
   	font-weight: 600;
   	line-height: 1.5;
   	margin: 0 1.5em 1.5em;
-  	padding: $small-spacing;
+  	padding: $base-spacing;
   	text-align: center;
   	text-decoration: none;
   	text-transform: uppercase;

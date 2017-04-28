@@ -2,8 +2,12 @@
 # Speaker box
 --------------------------------------------------------------*/
 .spkr {
- 	margin-bottom: 6em;
 	position: relative;
+ 	margin-bottom: 6em;
+	@include grid-media($medium) {
+   	margin-bottom: 12.5em;
+	}
+
 
 	h3 {
 		padding-top: 3.75em;
@@ -27,7 +31,7 @@
     box-shadow: 57px 57px 177px 0 rgba($red,.2);
 		height: auto;
 		position: absolute;
-		right: 0;
+		left: -25px;
 		top: 0;
 		z-index: -1;
 
@@ -128,7 +132,8 @@
 	}
 
 	img {
-		left: 0;
+  	left: auto;
+		right: -25px;
 	}
 
 	.spkr {
@@ -137,14 +142,6 @@
 			@include grid-media($medium) {
 				margin-left: auto;
 				margin-right: 0;
-			}
-		}
-		h3:before {
-			left: -2.5rem;
-			right: auto;
-			@include grid-media($medium) {
-				left: -2.5rem;
-				right: auto;
 			}
 		}
 	}

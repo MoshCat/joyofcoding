@@ -18,8 +18,12 @@
 	
 	#site-branding {
   	position: absolute;
-  	left: 50px;
-  	top: 20px;
+  	left: 1.5em;
+  	top: 15px;
+  	@include grid-media($large) {
+    	left: 3.75em;
+    	top: 20px;
+  	}
 		svg {
 			color: $red;
 			display: block;

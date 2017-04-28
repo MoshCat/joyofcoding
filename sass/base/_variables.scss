@@ -1,7 +1,7 @@
 // Grid
 $neat-grid: (
   columns: 12,
-  gutter: 50px,
+  gutter: 3.75rem,
 );
 
 $nogutter: (
@@ -20,9 +20,9 @@ $large: (
   media: 1024px,
 );
 $xlarge: (
-  media: 1440px,
+  media: 1280px,
 );
-$xxlarge: (media: 1660px);
+$xxlarge: (media: 1440px);
 
 // Typography
 $base-font-family: 'Poppins', $font-stack-system;
