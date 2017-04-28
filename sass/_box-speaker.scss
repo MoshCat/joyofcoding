@@ -59,12 +59,10 @@
   	position: absolute;
   	text-transform: uppercase;
   	top: 1em;
-  	left: 2rem;
-  	@include grid-media($medium) {
-      transform: translateX(-50%);
-      left: 50%;
-  	}
-  	
+    transform: translateX(-50%);
+    left: 50%;
+    width: 100%;
+    text-align: center;  	
   	.times {
   		white-space: nowrap;
   	}
