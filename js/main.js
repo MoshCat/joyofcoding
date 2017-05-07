@@ -1,53 +1,43 @@
 // @codekit-prepend 'jquery.min.js'
-// @codekit-prepend 'iscroll.js'
+// @codekit-prepend 'jquery.stellar.min.js'
 
+$.stellar({
+  // Set scrolling to be in either one or both directions
+  horizontalScrolling: false,
+  verticalScrolling: true,
 
-/*
-// ref https://github.com/WICG/EventListenerOptions/pull/30
-function isPassive() {
-  var supportsPassiveOption = false;
-  try {
-    addEventListener("test", null, Object.defineProperty({}, 'passive', {
-      get: function () {
-        supportsPassiveOption = true;
-      }
-    }));
-  } catch(e) {}
-  return supportsPassiveOption;
-}
+  // Set the global alignment offsets
+  horizontalOffset: 0,
+  verticalOffset: 0,
 
+  // Refreshes parallax content on window load and resize
+  responsive: false,
 
-var myScroll;
+  // Select which property is used to calculate scroll.
+  // Choose 'scroll', 'position', 'margin' or 'transform',
+  // or write your own 'scrollProperty' plugin.
+  scrollProperty: 'scroll',
 
-function loaded () {
-	myScroll = new IScroll('#container', {
-		mouseWheel: true,
-		indicators: [{
-			el: document.getElementById('starfield1'),
-			resize: false,
-			ignoreBoundaries: true,
-			speedRatioY: 0.4
-		}, {
-			el: document.getElementById('starfield2'),
-			resize: false,
-			ignoreBoundaries: true,
-			speedRatioY: 0.2
-		}]
-	});
-}
+  // Select which property is used to position elements.
+  // Choose between 'position' or 'transform',
+  // or write your own 'positionProperty' plugin.
+  positionProperty: 'transform',
 
-document.addEventListener('touchmove', function (e) { e.preventDefault(); }, isPassive() ? {
-	capture: false,
-	passive: false
-} : false);
-*/
+  // Enable or disable the two types of parallax
+  parallaxBackgrounds: true,
+  parallaxElements: true,
 
+  // Hide parallax elements that move outside the viewport
+  hideDistantElements: false,
 
+  // Customise how elements are shown and hidden
+  hideElement: function($elem) { $elem.hide(); },
+  showElement: function($elem) { $elem.show(); }
+});
 
 /* Add 'home' class to homepage */
 $(function() {
-  var loc = window.location.href; // returns the full URL
-  if(/index.html/.test(loc)) {
+  if ( $('#container').hasClass('page_home') ) {
     $('body').addClass('home');
   }
 });
