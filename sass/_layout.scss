@@ -38,7 +38,7 @@ body {
 	background-repeat: repeat;
 	
 
-  > main {
+  main {
 		padding-top: 8em;
     @include grid-container();
     @include grid-collapse();
