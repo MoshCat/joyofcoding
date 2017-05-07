@@ -39,7 +39,6 @@ if(document.getElementById('container').classList.contains("page_home")) {
   document.body.classList.toggle('home');
 }
 
-
 // poster frame click event
 $(document).on('click','.js-videoPoster',function(ev) {
   ev.preventDefault();
