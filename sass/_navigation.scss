@@ -11,9 +11,19 @@
 	ul {
   	display: none;
     margin-bottom: 2em;
-    margin-top: 5.5em;
+//     margin-top: 5.5em;
+    background-color: $red;
     @include grid-media($large) {
-      margin-top: 0;
+//       margin-top: 0;
+      background-color: inherit;
+    }
+    
+    .toggled & {
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      height: 100%;
+      width: 100%;
     }
 
   	li {
@@ -26,7 +36,7 @@
 
   		a {
   			color: white;
-  			background-color: rgba( $blue , .5 );
+//   			background-color: rgba( $blue , .5 );
   			display: block;
   			font-weight: bold;
   			font-size: 1em;
@@ -40,7 +50,7 @@
         @include grid-media($large) {
     			color: $red;
   				margin: 0;
-    			background-color: inherit;
+//     			background-color: inherit;
           line-height: 4.7em;
         }
 
@@ -84,11 +94,12 @@
 		position: absolute;
 		right: 15px;
 		top: 15px;
+		z-index: 1;
 	}
 }
 
 .menu-toggle,
-#site-navigation.toggled ul {
+.toggled #site-navigation ul {
 	display: block;
 }
 
@@ -118,9 +129,11 @@
 
 	&.is-active {
 		span {
+  		background: white;
 			background: 0 0;
 			&:before,
 			&:after { 
+    		background: white;
 				transition-delay: 0s, .15s;
 			}
 			&:before {

@@ -1,4 +1,6 @@
 // @codekit-prepend 'jquery.min.js'
+// @codekit-prepend 'iscroll.js'
+
 
 // poster frame click event
 $(document).on('click','.js-videoPoster',function(ev) {
@@ -38,7 +40,7 @@ function videoStop($wrapper) {
 ( function() {
 	var container, button, menu, links, i, len;
 
-	container = document.getElementById( 'site-navigation' );
+	container = document.getElementById( 'masthead' );
 	if ( ! container ) {
 		return;
 	}

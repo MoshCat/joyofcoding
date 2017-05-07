@@ -3,11 +3,11 @@
 --------------------------------------------------------------*/
 .page_home {
 	background-color: $red;
+  color: white;
 	background-image: url('../img/bg_mobile.jpg'),url('../img/bg_pattern_pink.png');
 	background-position: center top, center top;
 	background-size: 100%, auto;
 	background-repeat: no-repeat, repeat;
-  color: white;
 	@include grid-media($medium) {
   	background-image: url('../img/bg_main.png'),url('../img/bg_pattern_pink.png');
   }
@@ -31,6 +31,7 @@
       }
 		}
   }
+
 
   /*--------------------------------------------------------------
   # Lineup
@@ -63,14 +64,6 @@
   		@include grid-media($large) {
   		 	width: 46.155%;
   		}
-  		
-/*
-  		&:nth-child(odd) { 
-  			@include grid-media($xlarge) {
-  				margin-top: 7em; 
-  			}
-  		}
-*/
   	}
   }
 
@@ -160,10 +153,10 @@
     color: $blue;
   	text-align: center;
     > section {
-    	padding-top: 2em;
-    	padding-bottom: 2em;
-    @include grid-column(12);
   		padding-top: 6em;
+    	padding-bottom: 2em;
+      @include grid-column(12);
+
     	@include grid-media($large) {
     		padding-top: 12.5em;
         padding-bottom: 7em;

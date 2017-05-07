@@ -11,7 +11,7 @@
 
 	h3 {
 		padding-top: 3.75em;
-		text-align: right;
+// 		text-align: right;
 		margin-bottom: .5em;
 		@include grid-media($medium) {
 			padding-top: 2.25em;
@@ -32,7 +32,7 @@
     box-shadow: 57px 57px 177px 0 rgba($red,.2);
 		height: auto;
 		position: absolute;
-		left: -25px;
+// 		left: -25px;
 		top: 0;
 		z-index: -1;
 
@@ -127,12 +127,12 @@
 .spkr_alt {
 
 	h3 {
-		text-align: left;
+		text-align: right;
 	}
 
 	img {
-  	left: auto;
-		right: -25px;
+  	right: auto;
+		left: 0;
 	}
 
 	.spkr {

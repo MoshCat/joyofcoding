@@ -666,12 +666,6 @@ body {
   background-image: url("../img/bg_pattern_white.png");
   background-position: center top;
   background-repeat: repeat;
-  /*
-  &.page_home #masthead {
-    background: none;
-    filter: none;
-  }
-*/
 }
 
 body > main {
@@ -768,6 +762,7 @@ body > main > article .entry-content {
   position: absolute;
   left: 1.5em;
   top: 15px;
+  z-index: 1;
 }
 
 @media only screen and (min-width: 1024px) {
@@ -794,6 +789,15 @@ body > main > article .entry-content {
   color: white;
 }
 
+#masthead.toggled {
+  position: fixed;
+  /* Logo white when mobile menu is open */
+}
+
+#masthead.toggled #site-branding svg {
+  color: white;
+}
+
 /*--------------------------------------------------------------
 # Navigation
 --------------------------------------------------------------*/
@@ -808,13 +812,21 @@ body > main > article .entry-content {
 #site-navigation ul {
   display: none;
   margin-bottom: 2em;
-  margin-top: 5.5em;
+  background-color: #ff2b5d;
 }
 
 @media only screen and (min-width: 1024px) {
   #site-navigation ul {
-    margin-top: 0;
+    background-color: inherit;
   }
+}
+
+.toggled #site-navigation ul {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
 }
 
 #site-navigation ul li {
@@ -830,7 +842,6 @@ body > main > article .entry-content {
 
 #site-navigation ul li a {
   color: white;
-  background-color: rgba(0, 36, 179, 0.5);
   display: block;
   font-weight: bold;
   font-size: 1em;
@@ -846,7 +857,6 @@ body > main > article .entry-content {
   #site-navigation ul li a {
     color: #ff2b5d;
     margin: 0;
-    background-color: inherit;
     line-height: 4.7em;
   }
 }
@@ -891,10 +901,11 @@ body > main > article .entry-content {
   position: absolute;
   right: 15px;
   top: 15px;
+  z-index: 1;
 }
 
 .menu-toggle,
-#site-navigation.toggled ul {
+.toggled #site-navigation ul {
   display: block;
 }
 
@@ -923,10 +934,12 @@ body > main > article .entry-content {
 }
 
 #masthead button.is-active span {
+  background: white;
   background: 0 0;
 }
 
 #masthead button.is-active span:before, #masthead button.is-active span:after {
+  background: white;
   -webkit-transition-delay: 0s, .15s;
           transition-delay: 0s, .15s;
 }
@@ -990,11 +1003,11 @@ body > main > article .entry-content {
 --------------------------------------------------------------*/
 .page_home {
   background-color: #ff2b5d;
+  color: white;
   background-image: url("../img/bg_mobile.jpg"), url("../img/bg_pattern_pink.png");
   background-position: center top, center top;
   background-size: 100%, auto;
   background-repeat: no-repeat, repeat;
-  color: white;
   /*--------------------------------------------------------------
   # Lineup
   --------------------------------------------------------------*/
@@ -1065,13 +1078,6 @@ body > main > article .entry-content {
   margin-right: auto;
   width: 100%;
   margin-top: 2.5em;
-  /*
-  		&:nth-child(odd) { 
-  			@include grid-media($xlarge) {
-  				margin-top: 7em; 
-  			}
-  		}
-*/
 }
 
 @media only screen and (min-width: 768px) {
@@ -1286,12 +1292,11 @@ body > main > article .entry-content {
 }
 
 .page_home #sponsors > section {
-  padding-top: 2em;
+  padding-top: 6em;
   padding-bottom: 2em;
   width: calc(100% - 7.5rem);
   float: left;
   margin-left: 3.75rem;
-  padding-top: 6em;
 }
 
 @media only screen and (min-width: 1024px) {
@@ -2301,6 +2306,17 @@ body.page_schedule .schedule-grid ul.sg_timeslot li.sg_event_empty {
   margin-bottom: 2.5em;
 }
 
+.page-venue #venue article .row::after {
+  clear: both;
+  content: "";
+  display: block;
+}
+
+.page-venue #venue article .row img {
+  margin-bottom: 1.5em;
+  width: 100%;
+}
+
 .page-venue #venue article .intro {
   font-size: 1.25em;
   width: calc(100% - 7.5rem);
@@ -2318,44 +2334,133 @@ body.page_schedule .schedule-grid ul.sg_timeslot li.sg_event_empty {
   }
 }
 
-.page-venue #venue article .getting-there {
+.page-venue #venue article .getting-there .col-1 {
   width: calc(100% - 7.5rem);
   float: left;
   margin-left: 3.75rem;
 }
 
 @media only screen and (min-width: 768px) {
-  .page-venue #venue article .getting-there {
+  .page-venue #venue article .getting-there .col-1 {
+    width: calc(50% - 5.625rem);
+    float: left;
+    margin-left: 3.75rem;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .page-venue #venue article .getting-there .col-1 {
     width: calc(58.3333333333% - 5.9375rem);
     float: left;
     margin-left: 3.75rem;
   }
 }
 
-.page-venue #venue article .facilities {
+.page-venue #venue article .getting-there .col-2 {
   width: calc(100% - 7.5rem);
   float: left;
   margin-left: 3.75rem;
 }
 
 @media only screen and (min-width: 768px) {
-  .page-venue #venue article .facilities {
+  .page-venue #venue article .getting-there .col-2 {
+    width: calc(50% - 5.625rem);
+    float: left;
+    margin-left: 3.75rem;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .page-venue #venue article .getting-there .col-2 {
     width: calc(41.6666666667% - 5.3125rem);
     float: left;
     margin-left: 3.75rem;
-    margin-left: calc(58.3333333333% - 5.9375rem + 7.5rem);
   }
 }
 
-.page-venue #venue article .about-rotterdam {
+.page-venue #venue article .facilities .col-1 {
   width: calc(100% - 7.5rem);
   float: left;
   margin-left: 3.75rem;
 }
 
 @media only screen and (min-width: 768px) {
-  .page-venue #venue article .about-rotterdam {
+  .page-venue #venue article .facilities .col-1 {
+    width: calc(50% - 5.625rem);
+    float: left;
+    margin-left: 3.75rem;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .page-venue #venue article .facilities .col-1 {
+    width: calc(41.6666666667% - 5.3125rem);
+    float: left;
+    margin-left: 3.75rem;
+  }
+}
+
+.page-venue #venue article .facilities .col-2 {
+  width: calc(100% - 7.5rem);
+  float: left;
+  margin-left: 3.75rem;
+}
+
+@media only screen and (min-width: 768px) {
+  .page-venue #venue article .facilities .col-2 {
+    width: calc(50% - 5.625rem);
+    float: left;
+    margin-left: 3.75rem;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .page-venue #venue article .facilities .col-2 {
     width: calc(58.3333333333% - 5.9375rem);
+    float: left;
+    margin-left: 3.75rem;
+  }
+}
+
+.page-venue #venue article .about-rotterdam .col-1 {
+  width: calc(100% - 7.5rem);
+  float: left;
+  margin-left: 3.75rem;
+}
+
+@media only screen and (min-width: 768px) {
+  .page-venue #venue article .about-rotterdam .col-1 {
+    width: calc(50% - 5.625rem);
+    float: left;
+    margin-left: 3.75rem;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .page-venue #venue article .about-rotterdam .col-1 {
+    width: calc(58.3333333333% - 5.9375rem);
+    float: left;
+    margin-left: 3.75rem;
+  }
+}
+
+.page-venue #venue article .about-rotterdam .col-2 {
+  width: calc(100% - 7.5rem);
+  float: left;
+  margin-left: 3.75rem;
+}
+
+@media only screen and (min-width: 768px) {
+  .page-venue #venue article .about-rotterdam .col-2 {
+    width: calc(50% - 5.625rem);
+    float: left;
+    margin-left: 3.75rem;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .page-venue #venue article .about-rotterdam .col-2 {
+    width: calc(41.6666666667% - 5.3125rem);
     float: left;
     margin-left: 3.75rem;
   }
@@ -2405,7 +2510,6 @@ body.page_schedule .schedule-grid ul.sg_timeslot li.sg_event_empty {
   box-shadow: 57px 57px 177px 0 rgba(255, 43, 93, 0.2);
   height: auto;
   position: absolute;
-  left: -25px;
   top: 0;
   z-index: -1;
 }
@@ -2521,8 +2625,8 @@ body.page_schedule .schedule-grid ul.sg_timeslot li.sg_event_empty {
 }
 
 .spkr_alt img, .page_home #lineup article:nth-child(3) img, .page_home #lineup article:nth-child(4) img {
-  left: auto;
-  right: -25px;
+  right: auto;
+  left: 0;
 }
 
 @media only screen and (min-width: 768px) {

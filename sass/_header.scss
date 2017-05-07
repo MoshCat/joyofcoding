@@ -20,10 +20,12 @@
   	position: absolute;
   	left: 1.5em;
   	top: 15px;
+		z-index: 1;
   	@include grid-media($large) {
     	left: 3.75em;
     	top: 20px;
   	}
+
 		svg {
 			color: $red;
 			display: block;
@@ -42,6 +44,17 @@
   				color: white;
   			}
 			}
+
 		}
 	}
+
+	&.toggled {
+    position: fixed;
+    /* Logo white when mobile menu is open */
+  	#site-branding {
+  		svg {
+  			color: white;
+  		}
+    }
+  }
 }

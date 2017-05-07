@@ -38,13 +38,6 @@ body {
 	background-repeat: repeat;
 	
 
-/*
-  &.page_home #masthead {
-    background: none;
-    filter: none;
-  }
-*/
-
   > main {
 		padding-top: 8em;
     @include grid-container();
@@ -84,7 +77,6 @@ body {
     		}
 
     		@include grid-media($large) {
-//     			max-width: 70em;
           margin-bottom: 7em;
     		}
 
