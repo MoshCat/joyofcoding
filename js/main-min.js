@@ -2180,6 +2180,12 @@ if ( typeof module != 'undefined' && module.exports ) {
 // @codekit-prepend 'jquery.min.js'
 // @codekit-prepend 'iscroll.js'
 
+$(function() {
+  var loc = window.location.href; // returns the full URL
+  if(/index.html/.test(loc)) {
+    $('body').addClass('home');
+  }
+});
 
 // poster frame click event
 $(document).on('click','.js-videoPoster',function(ev) {

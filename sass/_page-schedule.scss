@@ -1,12 +1,8 @@
 /*--------------------------------------------------------------
 # Schedule
 --------------------------------------------------------------*/
-body.page_schedule {
-	background-image: url('../img/bg_pattern_white.png');
-	background-position: center top;
-	background-size: auto;
-	background-repeat: repeat;
-	
+.page_schedule {
+
 	.schedule-grid {
     @include grid-column(12);
     @include grid-media($medium) {
