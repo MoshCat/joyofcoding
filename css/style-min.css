@@ -785,7 +785,7 @@ body main > article .entry-content {
   color: #0024b3;
 }
 
-.page_home #masthead #site-branding svg:hover, .page_home #masthead #site-branding svg:active {
+.home #masthead #site-branding svg:hover, .home #masthead #site-branding svg:active {
   color: white;
 }
 
