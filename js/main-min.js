@@ -45,12 +45,10 @@ $.stellar({
   showElement: function($elem) { $elem.show(); }
 });
 
-/* Add 'home' class to homepage */
-$(function() {
-  if ( $('#container').hasClass('page_home') ) {
-    $('body').addClass('home');
-  }
-});
+if(document.getElementById('container').classList.contains("page_home")) {
+  document.body.classList.toggle('home');
+}
+
 
 // poster frame click event
 $(document).on('click','.js-videoPoster',function(ev) {
