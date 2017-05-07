@@ -115,7 +115,8 @@
 		right: 0;
 		margin: 0 auto;
 		width: 100%;
-		@include grid-media($medium) {
+    z-index: 1;
+    @include grid-media($medium) {
 			width: 46.155%;
 			margin-left: 0;
 		}

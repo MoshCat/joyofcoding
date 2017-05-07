@@ -2608,6 +2608,7 @@ body.page_speaker > .speaker-content .row aside section:before {
   right: 0;
   margin: 0 auto;
   width: 100%;
+  z-index: 1;
 }
 
 @media only screen and (min-width: 768px) {
