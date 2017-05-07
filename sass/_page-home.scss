@@ -97,13 +97,13 @@ body.home {
   		}
 
   		// Shift top 
-  		&:nth-child(1) { @include grid-media($xlarge) { margin-top: -20em; } }
-  		&:nth-child(2) { @include grid-media($xlarge) { margin-top: -12em; } }
-  		&:nth-child(3) { @include grid-media($xlarge) { margin-top: 20em; } } // Neil
+  		&:nth-child(1) { @include grid-media($xlarge) { margin-top: -20em; } } // Carin
+  		&:nth-child(2) { @include grid-media($xlarge) { margin-top: -12em; } } // Ted
+  		&:nth-child(3) { @include grid-media($xlarge) { margin-top: 20em; } } // Neal
   		&:nth-child(4) { @include grid-media($xlarge) { margin-top: -12em; } } // Kerr
   		&:nth-child(5) { @include grid-media($xlarge) { margin-top: 20em; } } // Falco
   		&:nth-child(6) { @include grid-media($xlarge) { margin-top: -8em; } } // Mariano
-  		&:nth-child(7) { @include grid-media($xlarge) { margin-top: 20em; } }
+  		&:nth-child(7) { @include grid-media($xlarge) { margin-top: 20em; } } // Why Join
   		&:nth-child(8) { @include grid-media($xlarge) { margin-top: -12em; } } // Its by devs
   		&:nth-child(9) { @include grid-media($xlarge) { margin-top: 25em; } } // Affordable
   		&:nth-child(10) { @include grid-media($xlarge) { margin-top: -10em; } } // Code of

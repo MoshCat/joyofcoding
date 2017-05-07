@@ -1,6 +1,50 @@
 // @codekit-prepend 'jquery.min.js'
 // @codekit-prepend 'iscroll.js'
 
+
+/*
+// ref https://github.com/WICG/EventListenerOptions/pull/30
+function isPassive() {
+  var supportsPassiveOption = false;
+  try {
+    addEventListener("test", null, Object.defineProperty({}, 'passive', {
+      get: function () {
+        supportsPassiveOption = true;
+      }
+    }));
+  } catch(e) {}
+  return supportsPassiveOption;
+}
+
+
+var myScroll;
+
+function loaded () {
+	myScroll = new IScroll('#container', {
+		mouseWheel: true,
+		indicators: [{
+			el: document.getElementById('starfield1'),
+			resize: false,
+			ignoreBoundaries: true,
+			speedRatioY: 0.4
+		}, {
+			el: document.getElementById('starfield2'),
+			resize: false,
+			ignoreBoundaries: true,
+			speedRatioY: 0.2
+		}]
+	});
+}
+
+document.addEventListener('touchmove', function (e) { e.preventDefault(); }, isPassive() ? {
+	capture: false,
+	passive: false
+} : false);
+*/
+
+
+
+/* Add 'home' class to homepage */
 $(function() {
   var loc = window.location.href; // returns the full URL
   if(/index.html/.test(loc)) {

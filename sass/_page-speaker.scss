@@ -1,7 +1,7 @@
 /*--------------------------------------------------------------
 # Speaker page
 --------------------------------------------------------------*/
-body.page_speaker {
+.page_speaker {
 	background-image: url('../img/nr_big_3.png'),url('../img/nr_big_3_cutoff.png'),url('../img/bg_pattern_white.png');
 	background-position: right top, left bottom, center top;
 	background-repeat: no-repeat, no-repeat, repeat;
@@ -11,7 +11,7 @@ body.page_speaker {
   }
 
 
-  > .speaker-content {
+  .speaker-content {
   	@extend .wrapper;
     @extend .padding;
 		padding-top: 6em;
