@@ -8,6 +8,21 @@
 		right: 0;
   }
 
+  .toggled & {
+    @media only screen and (max-width: 1024px) {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      height: 100%;
+      width: 100%;
+      background-color: $red;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+
 	ul {
   	display: none;
     margin-bottom: 2em;
@@ -18,14 +33,6 @@
       background-color: inherit;
     }
     
-    .toggled & {
-      position: fixed;
-      top: 0;
-      bottom: 0;
-      height: 100%;
-      width: 100%;
-    }
-
   	li {
   		text-align: center;
 
@@ -39,8 +46,8 @@
 //   			background-color: rgba( $blue , .5 );
   			display: block;
   			font-weight: bold;
-  			font-size: 1em;
-  			line-height: 3.5em;
+  			font-size: 1.5em;
+  			line-height: 2.5em;
   			letter-spacing: -1px;
   			padding: 0 1.25em;
   			text-transform: uppercase;
@@ -49,6 +56,7 @@
 
         @include grid-media($large) {
     			color: $red;
+          font-size: 1em;
   				margin: 0;
 //     			background-color: inherit;
           line-height: 4.7em;

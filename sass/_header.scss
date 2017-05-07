@@ -49,12 +49,15 @@
 	}
 
 	&.toggled {
-    position: fixed;
-    /* Logo white when mobile menu is open */
-  	#site-branding {
-  		svg {
-  			color: white;
-  		}
+    @media only screen and (max-width: 1024px) {
+      position: fixed;
+      height: 100%;
+      /* Logo white when mobile menu is open */
+    	#site-branding {
+    		svg {
+    			color: white;
+    		}
+      }
     }
   }
 }

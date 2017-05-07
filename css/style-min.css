@@ -789,13 +789,15 @@ body > main > article .entry-content {
   color: white;
 }
 
-#masthead.toggled {
-  position: fixed;
-  /* Logo white when mobile menu is open */
-}
-
-#masthead.toggled #site-branding svg {
-  color: white;
+@media only screen and (max-width: 1024px) {
+  #masthead.toggled {
+    position: fixed;
+    height: 100%;
+    /* Logo white when mobile menu is open */
+  }
+  #masthead.toggled #site-branding svg {
+    color: white;
+  }
 }
 
 /*--------------------------------------------------------------
@@ -809,6 +811,26 @@ body > main > article .entry-content {
   }
 }
 
+@media only screen and (max-width: 1024px) {
+  .toggled #site-navigation {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #ff2b5d;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
 #site-navigation ul {
   display: none;
   margin-bottom: 2em;
@@ -819,14 +841,6 @@ body > main > article .entry-content {
   #site-navigation ul {
     background-color: inherit;
   }
-}
-
-.toggled #site-navigation ul {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  height: 100%;
-  width: 100%;
 }
 
 #site-navigation ul li {
@@ -844,8 +858,8 @@ body > main > article .entry-content {
   color: white;
   display: block;
   font-weight: bold;
-  font-size: 1em;
-  line-height: 3.5em;
+  font-size: 1.5em;
+  line-height: 2.5em;
   letter-spacing: -1px;
   padding: 0 1.25em;
   text-transform: uppercase;
@@ -856,6 +870,7 @@ body > main > article .entry-content {
 @media only screen and (min-width: 1024px) {
   #site-navigation ul li a {
     color: #ff2b5d;
+    font-size: 1em;
     margin: 0;
     line-height: 4.7em;
   }
